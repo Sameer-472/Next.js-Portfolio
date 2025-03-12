@@ -5,7 +5,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 export default function Timeline() {
     return (
-        <div className="flex flex-col items-center py-10">
+        <div className="flex flex-col items-center my-20">
             <h2 className="text-3xl font-bold mb-2 text-white">My Journey</h2>
             <p className="text-gray-400 mb-8">Education and Work Experience</p>
 
@@ -25,6 +25,7 @@ export default function Timeline() {
                             scale: 1.01, // Slight zoom
                             boxShadow: "0px 0px 15px #51a2ff"
                         }}
+                        transition={{ type: "spring", stiffness: 200, damping: 10 }}
                         className="p-6 bg-gray-900 rounded-lg border border-gray-600 shadow-lg w-[45%] ml-auto"
                     >
                         <h3 className="text-xl font-semibold text-white">Frontend Developer</h3>

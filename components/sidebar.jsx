@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import {
@@ -6,13 +7,17 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
+import useModalStore from '@/store/useModalStore'
 
 const Sidebar = () => {
+
+    const { openModal } = useModalStore();
 
     const menuItem = [
         {
             icon: "/assets/coding.png",
             label: "My Skills",
+            onClick: () => openModal("SkillModal")
         },
         {
             icon: "/assets/blog-icon.png",
@@ -33,7 +38,7 @@ const Sidebar = () => {
                 <div key={index}>
                     <TooltipProvider>
                         <Tooltip>
-                            <TooltipTrigger><Image src={item.icon} alt='side-icon' width={30} height={30} /></TooltipTrigger>
+                            <TooltipTrigger onClick={item.onClick}><Image src={item.icon} alt='side-icon' width={30} height={30} /></TooltipTrigger>
                             <TooltipContent side="right" sideOffset={10}>
                                 <p>{item.label}</p>
                             </TooltipContent>

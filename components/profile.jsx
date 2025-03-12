@@ -1,5 +1,6 @@
 "use client";
 
+import { useWindowDimensions } from "@/helper/useWindow";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import Image from "next/image";
@@ -15,8 +16,11 @@ const icons = [
   { src: "/assets/next.svg", angle: 300 },
 ];
 
+
 export function Profile() {
   const [rotation, setRotation] = useState(0);
+
+  const { height } = useWindowDimensions();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,9 +30,9 @@ export function Profile() {
   }, []);
 
   return (
-    <div className=" flex flex-col items-center text-center pt-24 mt-5">
+    <div className=" flex flex-col items-center text-center pt-24 mt-5" style={{ height: height - 60 }}>
       {/* Rotating Icons */}
-      <div className="relative w-fit h-fit">
+      <div className="relative w-fit h-fit my-5">
         {icons.map(({ src, angle }, index) => {
           const x = 110 * Math.cos((angle + rotation) * (Math.PI / 180));
           const y = 110 * Math.sin((angle + rotation) * (Math.PI / 180));
@@ -53,26 +57,26 @@ export function Profile() {
           className="rounded-full border-4 border-gray-800 shadow-lg"
         />
       </div>
-
       {/* Title & Bio */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold my-5">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold my-10">
         Hi, I&apos;m <span className="text-blue-400">Sameer Khan</span>
       </h1>
-      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mt-2 max-w-lg">
-        AI-Enhanced Frontend Developer with 4+ years of experience.
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-lg">
+        I am Frontend Developer with 2+ years of experience.
+        using AI to level up dev efficiency and cut down the grind
       </p>
-      <div className="flex space-x-6 my-5">
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-          <Github className={"w-8 h-8 transition-transform duration-300 hover:scale-125 hover:text-blue-500"} />
+      <div className="flex space-x-6 my-10">
+        <a href="https://github.com/Sameer-472" target="_blank" rel="noopener noreferrer">
+          <Github className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-          <Linkedin className={"w-8 h-8 transition-transform duration-300 hover:scale-125 hover:text-blue-500"} />
+        <a href="https://www.linkedin.com/in/sameer-khan472/" target="_blank" rel="noopener noreferrer">
+          <Linkedin className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
-        <a href="mailto:your@email.com">
-          <Mail className={"w-8 h-8 transition-transform duration-300 hover:scale-125 hover:text-blue-500"} />
+        <a href="mailto:muhammadsameer2016@yahoo.com">
+          <Mail className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
-        <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">
-          <X className={"w-8 h-8 transition-transform duration-300 hover:scale-125 hover:text-blue-500"} />
+        <a href="https://x.com/Sameerkhan_45" target="_blank" rel="noopener noreferrer">
+          <X className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
       </div>
     </div>

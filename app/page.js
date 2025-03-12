@@ -1,3 +1,4 @@
+import Blogs from "@/components/blogs";
 import { Profile } from "@/components/profile";
 import Timeline from "@/components/Timeline";
 import Image from "next/image";
@@ -7,6 +8,7 @@ export default function Home() {
     <div className="min-h-screen ">
       <Profile />
       <Timeline />
+      <Blogs />
     </div>
   );
 }

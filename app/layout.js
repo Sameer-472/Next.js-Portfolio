@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Loader from "@/components/loader";
 import { Navbar } from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
+import ModalProvider from "@/components/providers/modalProvider";
 
 
 const geistSans = Geist({
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <Sidebar />
             {children}
+            <ModalProvider />
           </Loader>
         </ThemeProvider>
       </body>
