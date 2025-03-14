@@ -1,6 +1,5 @@
 "use client"
-
-import BlogCard from "./blogsCard";
+import ProjectCard from "./projectCard";
 
 const blogs = [
     {
@@ -30,15 +29,15 @@ const blogs = [
 ]
 
 
-export default function Blogs() {
+export default function Projects() {
     return (
-        <div className="flex items-center justify-center flex-col">
-            <h2 className="text-3xl font-bold mb-2 text-white">My Blogs and Post</h2>
-            <p className="text-gray-400 mb-8">Read my latest articles and posts</p>
+        <div className="flex items-center justify-center flex-col my-10">
+            <h2 className="text-3xl font-bold mb-2 text-white">Recent featured projects</h2>
+            <p className="text-gray-400 mb-8">Explore some of my personal and proffesional projects</p>
             <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6">
                 {blogs.map((blog, index) => (
                     <div key={index} className="col-span-6">
-                        <BlogCard
+                        <ProjectCard
                             key={index}
                             title={blog.title}
                             description={blog.description}

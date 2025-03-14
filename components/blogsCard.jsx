@@ -1,4 +1,3 @@
-"use client"
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -9,7 +8,7 @@ const BlogCard = ({ title, description, date, tags, link }) => {
       target="_blank"
       whileHover={{
         scale: 1.01, // Slight zoom
-        boxShadow: "0px 0px 15px #51a2ff",
+        boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
       }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className="block p-6 bg-gray-900 rounded-lg border border-gray-600 shadow-lg w-full"

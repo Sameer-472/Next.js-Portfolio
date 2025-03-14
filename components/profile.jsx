@@ -5,16 +5,27 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { SiGit, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
 
 // Define icons and their initial positions
+// const icons = [
+//   { src: "/assets/react-svg.svg", angle: 0 }, // Top
+//   { src: "/assets/javascript.svg", angle: 60 },
+//   { src: "/assets/html.svg", angle: 120 },
+//   { src: "/assets/css3.svg", angle: 180 },
+//   { src: "/assets/redux.svg", angle: 240 },
+//   { src: "/assets/next.svg", angle: 300, class: "dark:text-white" },
+// ];
+
 const icons = [
-  { src: "/assets/react-svg.svg", angle: 0 }, // Top
-  { src: "/assets/javascript.svg", angle: 60 },
-  { src: "/assets/html.svg", angle: 120 },
-  { src: "/assets/css3.svg", angle: 180 },
-  { src: "/assets/redux.svg", angle: 240 },
-  { src: "/assets/next.svg", angle: 300 },
-];
+  { name: "React", icon: SiReact, color: "text-sky-500", angle: 0 },
+  { name: "Next.js", icon: SiNextdotjs, color: "dark:text-white text-black", angle: 60 },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400", angle: 120 },
+  { name: "Redux", icon: SiRedux, color: "text-purple-400", angle: 180 },
+  { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-500", angle: 230 },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" , angle: 290},
+  //  { name: "Git", level: "Expert", icon: SiGit, color: "text-red-500" , angle: 360},
+]
 
 
 export function Profile() {
@@ -33,9 +44,10 @@ export function Profile() {
     <div className=" flex flex-col items-center text-center pt-24 mt-5" style={{ height: height - 60 }}>
       {/* Rotating Icons */}
       <div className="relative w-fit h-fit my-5">
-        {icons.map(({ src, angle }, index) => {
+        {icons.map(({ icon, angle, color }, index) => {
           const x = 110 * Math.cos((angle + rotation) * (Math.PI / 180));
           const y = 110 * Math.sin((angle + rotation) * (Math.PI / 180));
+          const IconComponent = icon;
           return (
             <motion.div
               key={index}
@@ -43,7 +55,7 @@ export function Profile() {
               animate={{ x, y }}
               transition={{ repeat: Infinity, ease: "linear", duration: 0.1 }}
             >
-              <Image src={src} alt="Icon" width={32} height={32} />
+              <IconComponent className={`${color} w-8 h-8`} />
             </motion.div>
           );
         })}

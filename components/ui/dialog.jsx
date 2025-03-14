@@ -3,6 +3,7 @@
 import * as React from "react"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { XIcon } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
 
 import { cn } from "@/lib/utils"
 
@@ -55,24 +56,29 @@ function DialogContent({
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
-      <DialogPrimitive.Content
-        data-slot="dialog-content"
-        className={cn(
-          "fixed top-[50%] left-[50%] z-50 max-w-3xl translate-x-[-50%] translate-y-[-50%] rounded-xl border border-white/20 bg-white/30 p-6 shadow-xl backdrop-blur-lg transition-all duration-300 ease-out dark:bg-neutral-900/40",
-          "data-[state=open]:animate-fade-in-zoom data-[state=closed]:animate-fade-out-zoom",
-          className
-        )}
-        {...props}
-      >
-        {children}
+      <AnimatePresence>
+        <DialogPrimitive.Content asChild forceMount {...props}>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className={cn(
+              "fixed top-[50%] left-[50%] z-50 max-w-4xl translate-x-[-50%] translate-y-[-50%] rounded-xl border border-white/20 bg-white/30 p-6 shadow-xl backdrop-blur-lg dark:bg-neutral-900/40",
+              className
+            )}
+          >
+            {children}
 
-        <DialogPrimitive.Close
-          className="absolute right-4 top-4 rounded-full bg-white/20 p-1 backdrop-blur-md transition-opacity hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
-        >
-          <XIcon className="h-4 w-4 text-black/70 dark:text-white/70" />
-          <span className="sr-only">Close</span>
-        </DialogPrimitive.Close>
-      </DialogPrimitive.Content>
+            <DialogPrimitive.Close
+              className="absolute right-4 top-4 rounded-full bg-white/20 p-1 backdrop-blur-md transition-opacity hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <XIcon className="h-4 w-4 text-black/70 dark:text-white/70" />
+              <span className="sr-only">Close</span>
+            </DialogPrimitive.Close>
+          </motion.div>
+        </DialogPrimitive.Content>
+      </AnimatePresence>
     </DialogPortal>
   );
 }

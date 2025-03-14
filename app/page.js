@@ -1,5 +1,6 @@
 import Blogs from "@/components/blogs";
 import { Profile } from "@/components/profile";
+import Projects from "@/components/projects";
 import Timeline from "@/components/Timeline";
 import Image from "next/image";
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Profile />
       <Timeline />
       <Blogs />
+      <Projects />
     </div>
   );
 }

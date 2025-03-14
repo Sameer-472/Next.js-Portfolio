@@ -1,47 +1,63 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { CustomModal } from '../customModal'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CustomModal } from '../customModal';
 import useModalStore from '@/store/useModalStore';
-import { SiReact, SiNextdotjs, SiJavascript, SiHtml5, SiTypescript, SiTailwindcss, SiDocker, SiJira , SiGit, SiPython, SiNodedotjs } from "react-icons/si";
+import { 
+    SiReact, SiNextdotjs, SiJavascript, SiHtml5, 
+    SiTypescript, SiTailwindcss, SiDocker, 
+    SiJira, SiGit, SiPython, SiNodedotjs , SiRedux , SiAntdesign
+} from "react-icons/si";
 
 const SKillsModal = () => {
-
     const { isOpen, type, closeModal } = useModalStore();
-    console.log("isOpen", isOpen, type);
 
     const skills = [
-        { name: "React", level: "Expert", icon: <SiReact className="text-sky-500" size={28} /> },
-        { name: "Next.js", level: "Expert", icon: <SiNextdotjs className="text-white" size={28} /> },
-        { name: "JavaScript", level: "Expert", icon: <SiJavascript className="text-yellow-400" size={28} /> },
-        { name: "HTML/CSS", level: "Expert", icon: <SiHtml5 className="text-orange-500" size={28} /> },
-        { name: "TypeScript", level: "Professional", icon: <SiTypescript className="text-blue-500" size={28} /> },
-        { name: "Tailwind CSS", level: "Professional", icon: <SiTailwindcss className="text-teal-400" size={28} /> },
-        { name: "Docker", level: "Professional", icon: <SiDocker className="text-sky-400" size={28} /> },
-        { name: "Jira", level: "Professional", icon: <SiJira className="text-blue-400" size={28} /> },
-        { name: "Git", level: "Professional", icon: <SiGit className="text-red-500" size={28} /> },
-        { name: "Python", level: "Beginner", icon: <SiPython className="text-blue-400" size={28} /> },
-        { name: "Node.js", level: "Professional", icon: <SiNodedotjs className="text-green-500" size={28} /> },
+        { name: "React", level: "Expert", icon: SiReact, color: "text-sky-500" },
+        { name: "Next.js", level: "Expert", icon: SiNextdotjs, color: "text-white" },
+        { name: "JavaScript", level: "Expert", icon: SiJavascript, color: "text-yellow-400" },
+        { name: "Redux", level: "Expert", icon: SiRedux, color: "text-purple-400" },
+        { name: "HTML/CSS", level: "Expert", icon: SiHtml5, color: "text-orange-500" },
+        { name: "TypeScript", level: "Professional", icon: SiTypescript, color: "text-blue-500" },
+        { name: "Antd", level: "Expert", icon: SiAntdesign , color: 'text-red-200]' },
+        { name: "Tailwind CSS", level: "Professional", icon: SiTailwindcss, color: "text-teal-400" },
+        { name: "Docker", level: "Beginner", icon: SiDocker, color: "text-sky-400" },
+        { name: "Git", level: "Expert", icon: SiGit, color: "text-red-500" },
+        { name: "Python", level: "Beginner", icon: SiPython, color: "text-blue-400" },
+        { name: "Node.js", level: "Professional", icon: SiNodedotjs, color: "text-green-500" },
     ];
 
     return (
-        <CustomModal open={isOpen} title={"My Skills"} onClose={closeModal}>
+        <CustomModal open={isOpen && type == "SkillModal"} title={"My Skills"} onClose={closeModal}>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6 overflow-y-auto max-h-[70vh]">
-                {skills.map((skill, index) => (
-                    <div
-                        key={index}
-                        className="flex items-center gap-4 p-4 bg-neutral-700 rounded-lg shadow-inner"
-                    >
-                        {skill.icon}
-                        <div>
-                            <h4 className="text-white font-medium">{skill.name}</h4>
-                            <p className="text-sm text-gray-300">{skill.level}</p>
-                        </div>
-                    </div>
-                ))}
+                {skills.map((skill, index) => {
+                    const IconComponent = skill.icon;
+                    return (
+                        <motion.div
+                            key={index}
+                            whileHover={{ scale: 1.05, boxShadow: "0px 4px 15px rgba(0,0,0,0.3)" }}
+                            whileTap={{ scale: 0.97 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                            className="flex items-center gap-4 p-4 bg-neutral-700 rounded-lg shadow-inner cursor-pointer"
+                        >
+                            {/* Icon that rotates on parent hover */}
+                            <motion.div
+                                whileHover={{ rotate: 360 }}
+                                transition={{ type: "spring", stiffness: 150, damping: 10 }}
+                            >
+                                <IconComponent className={`${skill?.color}`} size={28} />
+                            </motion.div>
+                            <div>
+                                <h4 className="text-white font-medium">{skill.name}</h4>
+                                <p className="text-sm text-gray-300">{skill.level}</p>
+                            </div>
+                        </motion.div>
+                    );
+                })}
             </div>
         </CustomModal>
-    )
-}
+    );
+};
 
-export default SKillsModal
+export default SKillsModal;
