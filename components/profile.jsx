@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { SiGit, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
+import { SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
+import { Element } from "react-scroll";
+
 
 // Define icons and their initial positions
 // const icons = [
@@ -41,9 +43,9 @@ export function Profile() {
   }, []);
 
   return (
-    <div className=" flex flex-col items-center text-center pt-24 mt-5" style={{ height: height - 60 }}>
+    <Element name="home" className=" flex flex-col items-center text-center pt-24 mt-5" style={{ height: height - 60 }}>
       {/* Rotating Icons */}
-      <div className="relative w-fit h-fit my-5">
+      <div className="relative w-fit h-fit">
         {icons.map(({ icon, angle, color }, index) => {
           const x = 110 * Math.cos((angle + rotation) * (Math.PI / 180));
           const y = 110 * Math.sin((angle + rotation) * (Math.PI / 180));
@@ -91,6 +93,6 @@ export function Profile() {
           <X className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
       </div>
-    </div>
+    </Element> 
   );
 }

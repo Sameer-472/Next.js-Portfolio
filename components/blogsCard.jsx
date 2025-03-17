@@ -23,7 +23,7 @@ const BlogCard = ({ title, description, date, tags, link }) => {
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="px-2 py-1 bg-blue-500 text-white text-sm rounded"
+            className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-md"
           >
             {tag}
           </span>

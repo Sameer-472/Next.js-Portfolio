@@ -203,3 +203,7 @@
 [data-state="closed"].animate-fade-out-zoom {
   animation: fade-out-zoom 0.2s ease-in forwards;
 }
+
+html {
+  scroll-behavior: smooth;
+}

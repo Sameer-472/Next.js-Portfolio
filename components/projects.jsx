@@ -1,52 +1,68 @@
 "use client"
+import { Element } from "react-scroll";
 import ProjectCard from "./projectCard";
 
-const blogs = [
+
+
+const projects = [
     {
-        title: "How to Upload files on IPFS using React",
-        img: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fiuixn0s0spkymwse1y6r.png",
-        description: "In this article you will learn how you can upload files on IPFS using react",
-        demo: "https://dev.to/sameer472/how-to-upload-files-on-ipfs-infuraio-using-react-56g",
-        code: "https://github.com/Sameer-472/expense-tracker-rebuild",
-        tech: ["Javascript", "React", "IPFS", "Infura.io", "web3"]
+        name: "Risk Management System",
+        details: "A Risk Management System (RMS) is a structured framework that identifies, assesses, and mitigates risks to safeguard an organization’s objectives. It enables proactive decision-making and resource allocation, enhancing resilience against potential threats",
+        img: "/assets/ermvare.png",
+        demo: "https://r3.ermvare.com/app/register",
+        sourceCodeEnable: false,
+        tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"]
     },
     {
-        title: "Quick overview of layer 2 solutions in blockchain",
-        img: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpk9yj1x2hii78j4c8vfh.jpg",
-        description: "Quick overview of layer 2 solutions in blockchain",
-        demo: "https://dev.to/sameer472/quick-guide-about-layer-2-scaling-solutions-5d9p",
-        code: "https://github.com/Sameer-472/expense-tracker-rebuild",
-        tech: ["Blockchain", "Research", "web3"]
+        name: "Talentvare",
+        details: "TalentVare simplify employee lifecycle management. From pre-boarding to off-boarding, automate tasks, manage paperwork, and ensure policy compliance.",
+        img: "/assets/talentvare.png",
+        demo: "https://best-letter.surge.sh/",
+        code: "https://github.com/Sameer-472/Alice-and-the-red-queen",
+        sourceCodeEnable: true,
+        tech: ["React", "CSS", "RTK", "Antd", "Axios"]
     },
-    {
-        title: "What the hell is Closure in JS?",
-        img: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fwreybj2ze7kimsgz13np.png",
-        description: "In-depth overview of Closure in JS ",
-        demo: "https://dev.to/sameer472/what-the-fk-is-closure-in-js-1j4o",
-        code: "https://github.com/Sameer-472/expense-tracker-rebuild",
-        tech: ["Javascript", "frontend", "react", "webdev"]
-    },
+    // {
+    //     name: "Full Stack Discord Clone",
+    //     details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
+    //     demo: "https://lonely-bedroom.surge.sh/",
+    //     code: "https://github.com/Sameer-472/expense-tracker-rebuild",
+    //     isPending: true,
+    //     sourceCodeEnable: true,
+    //     tech: ["Typescript", "Next.js", "Socket.io", "Shade Cn", "Zod", "Clerk"]
+    // },
+    // {
+    //     name: "React Quiz App",
+    //     details: "made this Quiz app with React and Typscript",
+    //     demo: "https://wary-airplane.surge.sh/",
+    //     code: "https://github.com/Sameer-472/Quiz-app-",
+    //     sourceCodeEnable: true,
+    //     tech: ["Typescript", "React", "Material UI", "Redux"]
+    // },
+
 ]
 
 
 export default function Projects() {
     return (
-        <div className="flex items-center justify-center flex-col my-10">
+        <Element name="projects" className="flex items-center justify-center flex-col my-10">
             <h2 className="text-3xl font-bold mb-2 text-white">Recent featured projects</h2>
             <p className="text-gray-400 mb-8">Explore some of my personal and proffesional projects</p>
-            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6">
-                {blogs.map((blog, index) => (
-                    <div key={index} className="col-span-6">
+            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
+                {projects.map((item, index) => (
+                    <div key={index} className="col-span-12 md:col-span-6">
                         <ProjectCard
                             key={index}
-                            title={blog.title}
-                            description={blog.description}
-                            tags={blog.tech}
-                            link={blog.demo}
+                            title={item.name}
+                            description={item.details}
+                            tags={item.tech}
+                            img={item?.img}
+                            link={item.demo}
+                            item={item}
                         />
                     </div>
                 ))}
             </div>
-        </div>
+        </Element>
     );
 }

@@ -32,12 +32,12 @@ const blogs = [
 
 export default function Blogs() {
     return (
-        <div className="flex items-center justify-center flex-col">
+        <div className="flex items-center justify-center flex-col my-10">
             <h2 className="text-3xl font-bold mb-2 text-white">My Blogs and Post</h2>
             <p className="text-gray-400 mb-8">Read my latest articles and posts</p>
-            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6">
+            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
                 {blogs.map((blog, index) => (
-                    <div key={index} className="col-span-6">
+                    <div key={index} className="col-span-12 md:col-span-6">
                         <BlogCard
                             key={index}
                             title={blog.title}

@@ -1,16 +1,19 @@
 import Blogs from "@/components/blogs";
+import ContactInfo from "@/components/contact";
+import Footer from "@/components/footer";
 import { Profile } from "@/components/profile";
 import Projects from "@/components/projects";
 import Timeline from "@/components/Timeline";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen ">
+    <div id='scrollContainer' name="scrollContainer" className="min-h-screen ">
       <Profile />
-      <Timeline />
       <Blogs />
+      <Timeline />
       <Projects />
+      <ContactInfo />
+      <Footer />
     </div>
   );
 }
