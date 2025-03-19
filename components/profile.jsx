@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
+import { SiGit, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
 import { Element } from "react-scroll";
 
 
@@ -21,13 +21,13 @@ import { Element } from "react-scroll";
 
 const icons = [
   { name: "React", icon: SiReact, color: "text-sky-500", angle: 0 },
-  { name: "Next.js", icon: SiNextdotjs, color: "dark:text-white text-black", angle: 60 },
-  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400", angle: 120 },
-  { name: "Redux", icon: SiRedux, color: "text-purple-400", angle: 180 },
-  { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-500", angle: 230 },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" , angle: 290},
-  //  { name: "Git", level: "Expert", icon: SiGit, color: "text-red-500" , angle: 360},
-]
+  { name: "Next.js", icon: SiNextdotjs, color: "dark:text-white text-black", angle: 51.4 },
+  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400", angle: 102.8 },
+  { name: "Redux", icon: SiRedux, color: "text-purple-400", angle: 154.2 },
+  { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-500", angle: 205.6 },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400", angle: 257 },
+  { name: "Git", icon: SiGit, color: "text-red-500", angle: 308.4 },
+];
 
 
 export function Profile() {
@@ -72,27 +72,27 @@ export function Profile() {
         />
       </div>
       {/* Title & Bio */}
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold my-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold my-10 px-4">
         Hi, I&apos;m <span className="text-blue-400">Sameer Khan</span>
       </h1>
-      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-lg">
+      <p className="text-center text-base sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-lg">
         I am Frontend Developer with 2+ years of experience.
         using AI to level up dev efficiency and cut down the grind
       </p>
       <div className="flex space-x-6 my-10">
         <a href="https://github.com/Sameer-472" target="_blank" rel="noopener noreferrer">
-          <Github className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
+          <Github className={"w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
         <a href="https://www.linkedin.com/in/sameer-khan472/" target="_blank" rel="noopener noreferrer">
-          <Linkedin className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
+          <Linkedin className={"w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
         <a href="mailto:muhammadsameer2016@yahoo.com">
-          <Mail className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
+          <Mail className={"w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
         <a href="https://x.com/Sameerkhan_45" target="_blank" rel="noopener noreferrer">
-          <X className={"w-8 h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
+          <X className={"w-6 h-6 md:w-8 md:h-8 transition-transform duration-300 hover:scale-115 hover:text-blue-500"} />
         </a>
       </div>
-    </Element> 
+    </Element>
   );
 }

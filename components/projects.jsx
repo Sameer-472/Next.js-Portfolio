@@ -46,8 +46,8 @@ const projects = [
 export default function Projects() {
     return (
         <Element name="projects" className="flex items-center justify-center flex-col my-10">
-            <h2 className="text-3xl font-bold mb-2 text-white">Recent featured projects</h2>
-            <p className="text-gray-400 mb-8">Explore some of my personal and proffesional projects</p>
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Recent featured projects</h2>
+            <p className="dark:text-gray-400 text-gray-500 mb-8 ">Explore some of my personal and proffesional projects</p>
             <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
                 {projects.map((item, index) => (
                     <div key={index} className="col-span-12 md:col-span-6">

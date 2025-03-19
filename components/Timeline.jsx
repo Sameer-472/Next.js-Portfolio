@@ -62,13 +62,13 @@ export default function Timeline() {
 
     return (
         <Element name="experience" className="flex flex-col items-center my-20 px-6">
-            <h2 className="text-3xl font-bold mb-2 text-white">My Journey</h2>
-            <p className="text-gray-400 mb-8">Education and Work Experience</p>
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Journey</h2>
+            <p className="dark:text-gray-400 text-gray-500 mb-8">Education and Work Experience</p>
 
             {/* Timeline Container */}
             <div className="relative w-full max-w-5xl mx-auto">
                 {/* Center Line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-[2px] h-full bg-gray-500"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-[2px] h-full bg-gray-200 dark:bg-gray-500 "></div>
 
                 {/* Timeline Item */}
                 {timelineData.map((item, index) => (
@@ -80,7 +80,7 @@ export default function Timeline() {
                         `}
                     >
                         {/* Icon */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-full border border-gray-400 shadow-lg w-10 h-10 items-center justify-center z-10 md:flex hidden">
+                        <div className="absolute left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-full border border-gray-400 shadow-lg w-10 h-10 items-center justify-center z-10 md:flex hidden">
                             {item.type === "education" ? (
                                 <GraduationCap className="w-5 h-5 text-blue-400 md:block hidden" />
                             ) : (
@@ -95,7 +95,7 @@ export default function Timeline() {
                                 boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
                             }}
                             transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                            className={`p-6 bg-gray-900 rounded-lg border border-gray-600 shadow-lg
+                            className={`p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg
                             w-full md:w-[45%] 
                             ${index % 2 === 0 ? "ml-auto" : "mr-auto"} 
                             md:mt-0 mt-10
@@ -110,9 +110,9 @@ export default function Timeline() {
                             >
                                 {item.company} ↗
                             </a>
-                            <p className="text-gray-400 text-sm">{item.duration}</p>
+                            <p className="dark:text-gray-400 text-gray-600 text-sm">{item.duration}</p>
 
-                            <ul className="text-gray-300 mt-2 space-y-1">
+                            <ul className="dark:text-gray-300 text-gray-600 mt-2 space-y-1">
                                 {item.points.map((point, idx) => (
                                     <li key={idx}>• {point}</li>
                                 ))}
@@ -120,7 +120,7 @@ export default function Timeline() {
 
                             <div className="flex gap-2 mt-3 flex-wrap">
                                 {item.skills.map((skill, idx) => (
-                                    <span key={idx} className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-md">
+                                    <span key={idx} className="px-3 py-1 shadow bg-white/10 text-gray-500 dark:text-gray-300 text-xs rounded-full backdrop-blur-md">
                                         {skill}
                                     </span>
                                 ))}

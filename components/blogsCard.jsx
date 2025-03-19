@@ -11,19 +11,18 @@ const BlogCard = ({ title, description, date, tags, link }) => {
         boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
       }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
-      className="block p-6 bg-gray-900 rounded-lg border border-gray-600 shadow-lg w-full"
+      className="block p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg w-full"
     >
-      <h3 className="text-xl font-semibold text-white flex justify-between items-center gap-2">
+      <h3 className="text-xl font-semibold text-gray-600 dark:text-white flex justify-between items-center gap-2">
         {title}
         <ArrowUpRight className="w-5 h-5 text-blue-400" />
       </h3>
-      <p className="text-gray-400 text-sm mt-1">{date}</p>
-      <p className="text-gray-300 mt-2 line-clamp-3">{description}</p>
+      <p className="text-gray-600 dark:text-gray-300 mt-2 line-clamp-3">{description}</p>
       <div className="flex gap-2 mt-3 flex-wrap">
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-md"
+            className="px-3 py-1 shadow bg-white/10 text-gray-500 dark:text-gray-300 text-xs rounded-full backdrop-blur-md"
           >
             {tag}
           </span>

@@ -26,7 +26,9 @@ const Sidebar = () => {
         {
             icon: "/assets/resume-icon.png",
             label: "My Resume",
-            onClick: () => openModal("ResumeModal")
+            onClick: () => {
+                window.open('/SameerKhan.resume.pdf' , '_blank');
+            }
         },
         {
             icon: "/assets/project-icon.svg",

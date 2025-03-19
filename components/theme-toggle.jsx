@@ -27,7 +27,7 @@ export function ThemeToggle() {
         <Moon className="absolute h-[1.2rem] w-[1.2rem] text-white hover:rotate-90" />
       </Button >
       : <Button  className={"hover:bg-transparent bg-transparent"} onClick={() => setTheme("dark")}>
-        <Sun className="h-[1.2rem] w-[1.2rem] text-orange-400 dark:-rotate-90" />
+        <Sun className="absolute h-[1.2rem] w-[1.2rem] text-orange-400 dark:-rotate-90" />
       </Button>
   );
 }

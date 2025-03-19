@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import SKillsModal from "../modals/skillsModal";
-import ResumeModal from "../modals/resumeModal";
 
 export default function ModalProvider() {
     // Optional: Ensure modal does not flash on first render (Hydration issue)
@@ -14,7 +13,7 @@ export default function ModalProvider() {
     return (
         <>
             <SKillsModal />
-            <ResumeModal />
+            {/* <ResumeModal /> */}
         </>
     );
 }
