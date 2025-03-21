@@ -4,9 +4,8 @@ import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import Loader from "@/components/loader";
 import { Navbar } from "@/components/navbar";
-import Sidebar from "@/components/sidebar";
 import ModalProvider from "@/components/providers/modalProvider";
-
+import "animate.css/animate.compat.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +35,7 @@ export default function RootLayout({ children }) {
         >
           <Loader>
             <Navbar />
-            <Sidebar />
+            {/* <Sidebar /> */}
             {children}
             <ModalProvider />
           </Loader>

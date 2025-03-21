@@ -64,12 +64,11 @@ function DialogContent({
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             className={cn(
-              "fixed top-[50%] left-[50%] z-50 max-w-4xl translate-x-[-50%] translate-y-[-50%] rounded-xl border border-white/20 bg-white/30 p-6 shadow-xl backdrop-blur-lg dark:bg-neutral-900/40",
+              "fixed top-[50%] left-[50%] z-50 w-[90%] md:max-w-4xl translate-x-[-50%] translate-y-[-50%] rounded-xl border border-white/20 bg-white/30 p-6 shadow-xl backdrop-blur-lg dark:bg-neutral-900/40",
               className
             )}
           >
             {children}
-
             <DialogPrimitive.Close
               className="absolute right-4 top-4 rounded-full bg-white/20 p-1 backdrop-blur-md transition-opacity hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/40"
             >

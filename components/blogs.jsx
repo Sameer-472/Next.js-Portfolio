@@ -1,12 +1,13 @@
 "use client"
 
 import BlogCard from "./blogsCard";
+import { motion } from "framer-motion"
 
 const blogs = [
     {
         title: "How to Upload files on IPFS using React",
         img: "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fiuixn0s0spkymwse1y6r.png",
-        description: "In this article you will learn how you can upload files on IPFS using react",
+        description: "In this article youi will learn how you can upload files on IPFS using react",
         demo: "https://dev.to/sameer472/how-to-upload-files-on-ipfs-infuraio-using-react-56g",
         code: "https://github.com/Sameer-472/expense-tracker-rebuild",
         tech: ["Javascript", "React", "IPFS", "Infura.io", "web3"]
@@ -32,7 +33,12 @@ const blogs = [
 
 export default function Blogs() {
     return (
-        <div className="flex items-center justify-center flex-col my-10">
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100 }}
+            viewport={{ once: false }}
+            className="flex items-center justify-center flex-col my-5">
             <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Blogs and Post</h2>
             <p className="dark:text-gray-400 mb-8 text-gray-500">Read my latest articles and posts</p>
             <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
@@ -48,6 +54,6 @@ export default function Blogs() {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 }

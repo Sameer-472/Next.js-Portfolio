@@ -61,75 +61,82 @@ export default function Timeline() {
     ];
 
     return (
-        <Element name="experience" className="flex flex-col items-center my-20 px-6">
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Journey</h2>
-            <p className="dark:text-gray-400 text-gray-500 mb-8">Education and Work Experience</p>
+        <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100 }}
+            viewport={{ once: false }}
+        >
+            <Element name="experience" className="flex flex-col items-center my-20 px-6">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Journey</h2>
+                <p className="dark:text-gray-400 text-gray-500 mb-8">Education and Work Experience</p>
 
-            {/* Timeline Container */}
-            <div className="relative w-full max-w-5xl mx-auto">
-                {/* Center Line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-[2px] h-full bg-gray-200 dark:bg-gray-500 "></div>
+                {/* Timeline Container */}
+                <div className="relative w-full max-w-5xl mx-auto">
+                    {/* Center Line */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-[2px] h-full bg-gray-200 dark:bg-gray-500 "></div>
 
-                {/* Timeline Item */}
-                {timelineData.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`relative flex items-center mb-16 w-full
+                    {/* Timeline Item */}
+                    {timelineData.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`relative flex items-center mb-16 w-full
                         ${index % 2 === 0 ? "justify-start md:justify-start" : "justify-end md:justify-end"}
                         ${index % 2 !== 0 && "md:flex-row-reverse"}
                         `}
-                    >
-                        {/* Icon */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-full border border-gray-400 shadow-lg w-10 h-10 items-center justify-center z-10 md:flex hidden">
-                            {item.type === "education" ? (
-                                <GraduationCap className="w-5 h-5 text-blue-400 md:block hidden" />
-                            ) : (
-                                <Briefcase className="w-5 h-5 text-blue-400 md:block hidden" />
-                            )}
-                        </div>
+                        >
+                            {/* Icon */}
+                            <div className="absolute left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-full border border-gray-400 shadow-lg w-10 h-10 items-center justify-center z-10 md:flex hidden">
+                                {item.type === "education" ? (
+                                    <GraduationCap className="w-5 h-5 text-blue-400 md:block hidden" />
+                                ) : (
+                                    <Briefcase className="w-5 h-5 text-blue-400 md:block hidden" />
+                                )}
+                            </div>
 
-                        {/* Card */}
-                        <motion.div
-                            whileHover={{
-                                scale: 1.01,
-                                boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
-                            }}
-                            transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                            className={`p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg
+                            {/* Card */}
+                            <motion.div
+                                whileHover={{
+                                    scale: 1.01,
+                                    boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
+                                }}
+                                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                                className={`p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg
                             w-full md:w-[45%] 
                             ${index % 2 === 0 ? "ml-auto" : "mr-auto"} 
                             md:mt-0 mt-10
                             `}
-                        >
-                            <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                            <a
-                                href={item.link}
-                                className="text-blue-400 hover:underline flex items-center"
-                                target="_blank"
-                                rel="noopener noreferrer"
                             >
-                                {item.company} ↗
-                            </a>
-                            <p className="dark:text-gray-400 text-gray-600 text-sm">{item.duration}</p>
+                                <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                                <a
+                                    href={item.link}
+                                    className="text-blue-400 hover:underline flex items-center"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {item.company} ↗
+                                </a>
+                                <p className="dark:text-gray-400 text-gray-600 text-sm">{item.duration}</p>
 
-                            <ul className="dark:text-gray-300 text-gray-600 mt-2 space-y-1">
-                                {item.points.map((point, idx) => (
-                                    <li key={idx}>• {point}</li>
-                                ))}
-                            </ul>
+                                <ul className="dark:text-gray-300 text-gray-600 mt-2 space-y-1">
+                                    {item.points.map((point, idx) => (
+                                        <li key={idx}>• {point}</li>
+                                    ))}
+                                </ul>
 
-                            <div className="flex gap-2 mt-3 flex-wrap">
-                                {item.skills.map((skill, idx) => (
-                                    <span key={idx} className="px-3 py-1 shadow bg-white/10 text-gray-500 dark:text-gray-300 text-xs rounded-full backdrop-blur-md">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                ))}
-            </div>
-        </Element>
+                                <div className="flex gap-2 mt-3 flex-wrap">
+                                    {item.skills.map((skill, idx) => (
+                                        <span key={idx} className="px-3 py-1 shadow bg-white/10 text-gray-500 dark:text-gray-300 text-xs rounded-full backdrop-blur-md">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+                    ))}
+                </div>
+            </Element>
+        </motion.div>
     );
 }
 

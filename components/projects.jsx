@@ -1,6 +1,8 @@
 "use client"
 import { Element } from "react-scroll";
 import ProjectCard from "./projectCard";
+import { motion } from "framer-motion";
+
 
 
 
@@ -45,24 +47,29 @@ const projects = [
 
 export default function Projects() {
     return (
-        <Element name="projects" className="flex items-center justify-center flex-col my-10">
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Recent featured projects</h2>
-            <p className="dark:text-gray-400 text-gray-500 mb-8 ">Explore some of my personal and proffesional projects</p>
-            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
-                {projects.map((item, index) => (
-                    <div key={index} className="col-span-12 md:col-span-6">
-                        <ProjectCard
-                            key={index}
-                            title={item.name}
-                            description={item.details}
-                            tags={item.tech}
-                            img={item?.img}
-                            link={item.demo}
-                            item={item}
-                        />
-                    </div>
-                ))}
-            </div>
-        </Element>
+        <motion.div initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ type: "spring", stiffness: 100 }}
+            viewport={{ once: true }}>
+            <Element name="projects" className="flex items-center justify-center flex-col my-10">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Recent featured projects</h2>
+                <p className="dark:text-gray-400 text-gray-500 mb-8 ">Explore some of my personal and proffesional projects</p>
+                <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
+                    {projects.map((item, index) => (
+                        <div key={index} className="col-span-12 md:col-span-6">
+                            <ProjectCard
+                                key={index}
+                                title={item.name}
+                                description={item.details}
+                                tags={item.tech}
+                                img={item?.img}
+                                link={item.demo}
+                                item={item}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </Element>
+        </motion.div>
     );
 }

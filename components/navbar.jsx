@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeToggle } from "@/components/theme-toggle";
-import { scroller, Link } from "react-scroll";
+import { Link } from "react-scroll";
 
 export function Navbar() {
 
