@@ -16,13 +16,13 @@ const projects = [
         tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"]
     },
     {
-        name: "Talentvare",
-        details: "TalentVare simplify employee lifecycle management. From pre-boarding to off-boarding, automate tasks, manage paperwork, and ensure policy compliance.",
-        img: "/assets/talentvare.png",
-        demo: "https://best-letter.surge.sh/",
-        code: "https://github.com/Sameer-472/Alice-and-the-red-queen",
+        name: "Full Stack Discord Clone",
+        details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
+        img: "/assets/discord-image.jpg",
+        demo: "https://github.com/Sameer-472/Discord-Clone",
+        code: "https://github.com/Sameer-472/Discord-Clone",
         sourceCodeEnable: true,
-        tech: ["React", "CSS", "RTK", "Antd", "Axios"]
+        tech: ["Typescript", "Next.js", "Socket.io", "Zod", "Clerk"]
     },
     // {
     //     name: "Full Stack Discord Clone",
