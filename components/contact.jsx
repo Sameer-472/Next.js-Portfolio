@@ -23,7 +23,7 @@ export default function ContactInfo() {
                     name="contact"
                     className="grid grid-cols-1 md:grid-cols-2 gap-6 dark:bg-[#1e293b] bg-white dark:text-white text-gray-600 rounded-lg shadow-xl w-full px-4 md:px-6 py-6"
                 >
-                    <div className="relative w-full h-64 md:h-auto rounded-lg shadow-xl overflow-hidden">
+                    {/* <div className="relative w-full h-64 md:h-auto rounded-lg shadow-xl overflow-hidden">
                         <Image
                             src="/assets/contactInfo.png"
                             layout="fill"
@@ -31,7 +31,7 @@ export default function ContactInfo() {
                             alt="Contact Info"
                             className="rounded-lg"
                         />
-                    </div>
+                    </div> */}
 
                     <div className="space-y-6 p-3 md:p-6">
                         <h3 className="text-xl font-bold">Contact Information</h3>
