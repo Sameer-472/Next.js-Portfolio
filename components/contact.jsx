@@ -25,7 +25,7 @@ export default function ContactInfo() {
                 >
                     <div className="relative w-full h-64 md:h-auto rounded-lg shadow-xl overflow-hidden">
                         <Image
-                            src="/assets/contactInfo.jpg"
+                            src="/assets/contactInfo.png"
                             layout="fill"
                             objectFit="cover"
                             alt="Contact Info"
