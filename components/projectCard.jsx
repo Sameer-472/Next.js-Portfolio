@@ -27,22 +27,22 @@ const ProjectCard = ({ title, description, tags, link, img, item }) => {
                 />
                 <div className="absolute inset-0 dark:bg-black/60 bg:white shadow-lg"></div>
                 <div className="flex justify-between gap-3">
-                    <PlayCircle className="absolute top-3 left-3 w-8 h-8 text-white/80" />
+                    {/* <PlayCircle className="absolute top-3 left-3 w-8 h-8 text-white/80" /> */}
                     {/* <Github className="absolute top-3 left-3 w-8 h-8 text-white/80" /> */}
                 </div>
             </div>
 
             {/* Card Content */}
             <div className="p-4">
-                <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-                <p className="text-gray-400 text-sm line-clamp-3">{description}</p>
+                <h3 className="text-lg font-semibold dark:text-white text-gray-600 mb-2">{title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3">{description}</p>
 
                 {/* Tech Tags */}
                 <div className="flex gap-2 mt-4 flex-wrap">
                     {tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="px-3 py-1 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-md"
+                            className="px-3 py-1 bg-white/10 text-gray-500 dark:text-gray-300 text-xs rounded-full backdrop-blur-md"
                         >
                             {tag}
                         </span>
