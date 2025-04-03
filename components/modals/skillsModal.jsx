@@ -11,7 +11,7 @@ import {
 } from "react-icons/si";
 
 const SKillsModal = () => {
-    const { isOpen, type, closeModal } = useModalStore();
+    const { isOpen, type, closeModal} = useModalStore();
 
     const skills = [
         { name: "React", level: "Expert", icon: SiReact, color: "text-sky-500" },
