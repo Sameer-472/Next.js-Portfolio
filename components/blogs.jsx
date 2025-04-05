@@ -1,5 +1,6 @@
 "use client"
 
+import { Element } from "react-scroll";
 import BlogCard from "./blogsCard";
 import { motion } from "framer-motion"
 
@@ -33,27 +34,33 @@ const blogs = [
 
 export default function Blogs() {
     return (
-        <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100 }}
-            viewport={{ once: false }}
-            className="flex items-center justify-center flex-col my-5">
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Blogs and Post</h2>
-            <p className="dark:text-gray-400 mb-8 text-gray-500">Read my latest articles and posts</p>
-            <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
-                {blogs.map((blog, index) => (
-                    <div key={index} className="col-span-12 md:col-span-6">
-                        <BlogCard
-                            key={index}
-                            title={blog.title}
-                            description={blog.description}
-                            tags={blog.tech}
-                            link={blog.demo}
-                        />
-                    </div>
-                ))}
-            </div>
-        </motion.div>
+        <Element name="blogs">
+            <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 100 }}
+                viewport={{ once: false }}
+                className="flex items-center justify-start flex-col my-5 w-full mx-auto px-6 lg:px-32">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
+                    Insights & Inspirations ✍️
+                </h2>
+                <p className="dark:text-gray-400 mb-8 text-center  text-gray-500">
+                    Explore my latest thoughts, tutorials, and industry insights.
+                </p>
+                <div className="relative grid grid-cols-12 gap-6 w-full">
+                    {blogs.map((blog, index) => (
+                        <div key={index} className="col-span-12 md:col-span-6">
+                            <BlogCard
+                                key={index}
+                                title={blog.title}
+                                description={blog.description}
+                                tags={blog.tech}
+                                link={blog.demo}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+        </Element>
     );
 }

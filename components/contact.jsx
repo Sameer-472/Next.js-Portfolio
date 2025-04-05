@@ -11,7 +11,7 @@ export default function ContactInfo() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: false }}>
-            <Element className="flex flex-col items-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <Element className="flex flex-col items-center mx-auto px-6 lg:px-32 py-12">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 dark:text-white text-gray-800">
                     Let's Connect
                 </h2>

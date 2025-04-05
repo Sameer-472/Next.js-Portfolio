@@ -67,12 +67,15 @@ export default function Timeline() {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: false }}
         >
-            <Element name="experience" className="flex flex-col items-center my-20 px-6">
-                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">My Journey</h2>
-                <p className="dark:text-gray-400 text-gray-500 mb-8">Education and Work Experience</p>
-
+            <Element name="experience" className="flex flex-col items-center my-20">
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
+                    My Professional Odyssey 🚀
+                </h2>
+                <p className="dark:text-gray-400 text-center px-6 text-gray-500 mb-8">
+                    A blend of education and hands-on experience shaping my career.
+                </p>
                 {/* Timeline Container */}
-                <div className="relative w-full max-w-5xl mx-auto">
+                <div className="relative w-full px-6 mx-auto lg:px-32">
                     {/* Center Line */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-[2px] h-full bg-gray-200 dark:bg-gray-500 "></div>
 

@@ -82,8 +82,8 @@ export default function Projects() {
             transition={{ type: "spring", stiffness: 100 }}
             viewport={{ once: true }}>
             <Element name="projects" className="flex items-center justify-center flex-col my-10">
-                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Recent featured projects</h2>
-                <p className="dark:text-gray-400 text-gray-500 mb-8 ">Explore some of my personal and proffesional projects</p>
+                <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Showcasing My Work 💡</h2>
+                <p className="dark:text-gray-400 text-gray-500 mb-8 text-center px-6">A glimpse into my personal and professional projects—where ideas turn into reality.</p>
                 <div className="flex justify-between gap-2 mb-5">
                     <Button onClick={() => {
                         setProjects(reactProjects)
@@ -94,7 +94,7 @@ export default function Projects() {
                         setStatus("web3Project")
                     }} >Web 3 Projects</Button>
                 </div>
-                <div className="relative w-full max-w-5xl mx-auto grid grid-cols-12 gap-6 px-6">
+                <div className="relative w-full mx-auto grid grid-cols-12 gap-6 px-6 lg:px-32">
                     {projects.map((item, index) => (
                         <div key={index} className="col-span-12 md:col-span-6">
                             <ProjectCard

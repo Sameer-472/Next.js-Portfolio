@@ -29,7 +29,6 @@ export function Navbar() {
         <Link
           key={key}
           to={key}
-          smooth={true}
           duration={800}
           className="relative cursor-pointer text-gray-800 dark:text-white transition-all duration-300 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-110 leading-none"
         >

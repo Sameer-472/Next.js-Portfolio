@@ -2,12 +2,8 @@
 
 import { useWindowDimensions } from "@/helper/useWindow";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SiGit, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwindcss } from "react-icons/si";
-import { Element } from "react-scroll";
-import { Button } from "./ui/button";
 import useModalStore from "@/store/useModalStore";
 import BentoGrid from "./BentoGrid";
 import Link from "next/link";
@@ -172,20 +168,17 @@ export function Profile() {
                 variants={contentVariants}
                 className="text-base leading-relaxed text-gray-600 dark:text-white tracking-normal font-semibold mb-3"
               >
-                I&apos;m a Front end & web3 developer completed my graduation in Information Technology & having expertise in various Front end technologies.
-                <span className="">React , Javascript</span>{" "}
-                I also familiar with{" "}
-                <span className="">Ethereum , Solidity , Ether.js and Dapps</span>.
+                I'm a Frontend Developer passionate about building user-friendly and scalable web applications.
+                I specialize in <span className="text-purple-500">React</span>, <span className="text-purple-500">JavaScript</span>, and modern UI frameworks.
               </motion.p>
+
               <motion.p
                 variants={contentVariants}
                 className="text-base leading-relaxed text-gray-600 dark:text-white tracking-normal font-semibold"
               >
-                My interest in Blockchain allows me to craft innovative solutions that{" "}
-                <span className="">leverage Blockhain</span> to enhance{" "}
-                <span className="">Web app</span>{" "}
-                <span className="">functionality</span>.
+                I focus on crafting high-performance, scalable, and maintainable web applications with clean and efficient code.
               </motion.p>
+
             </div>
           </div>
           <div className="flex w-full lg:w-1/2 justify-center">

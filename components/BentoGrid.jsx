@@ -5,8 +5,7 @@ import React from "react";
 // import calculateYearCount from "@/app/utils/expCalculator";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-// import { downloadPDF } from "@/app/utils/downloadPDF";
-import Link from "next/link";
+import { Link } from "react-scroll";
 
 const contentContainerVariants = {
     hidden: { opacity: 0 },
@@ -55,7 +54,7 @@ const BentoGrid = () => {
                         },
                     }}
                     className={`${boxStyle} group rounded-[35px] cursor-pointer bg-transparent overflow-visible`}
-                    onClick={() => router.push("/about")}
+                // onClick={() => router.push("/about")}
                 >
                     <img
                         className="w-[95px] h-[95px] lg:w-[120px] lg:h-[120px] rounded-full object-cover group-hover:scale-105 transition-all ease-in-out duration-1000"
@@ -63,66 +62,24 @@ const BentoGrid = () => {
                         alt="profile-pic"
                     />
                 </motion.div>
-                <motion.div
-                    variants={{
-                        ...contentVariants,
-                        visible: {
-                            ...contentVariants.visible,
-                            transition: { ...contentVariants.visible.transition, delay: 0.3 },
-                        },
-                    }}
-                    className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-gray-900 shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`}
-                    onClick={() => router.push("/credentials")}
-                >
-                    
-                    <div className="flex flex-col items-center justify-center">
-                        <span className="text-[20px] lg:text-[30px] font-black">
-                            {/* {calculateYearCount()} */}
-                            2+
-                        </span>
-                        <span className="text-xs font-semibold whitespace-pre-wrap">
-                            yr. hands-on
-                        </span>
-                    </div>
-                </motion.div>
-                <Link
-                    href="./doc/resume.pdf"
-                    target="_blank"
-                    alt="my-cv"
-                    rel="noopener noreferrer"
-                >
+                <Link to="experience" className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-gray-900 shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`} className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-gray-900 shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`}>
                     <motion.div
                         variants={{
                             ...contentVariants,
                             visible: {
                                 ...contentVariants.visible,
-                                transition: {
-                                    ...contentVariants.visible.transition,
-                                    delay: 0.4,
-                                },
+                                transition: { ...contentVariants.visible.transition, delay: 0.3 },
                             },
                         }}
-                        className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-br-[35px] rounded-t-[35px] cursor-pointer hover:text-secondary hover:font-black transition-all ease-in-out duration-500`}
-                    // onClick={() =>
-                    //   downloadPDF("/public/", "Resume - Muhammad Azlaan Zubair.pdf")
-                    // }
                     >
-                        <div className="flex items-center justify-center">
-                            <span className="text-xs font-bold text-center uppercase">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    className="w-8 h-8 mb-1 mx-auto"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
-                                        clipRule="evenodd"
-                                    />
-                                    <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
-                                </svg>
-                                Resume
+
+                        <div className="flex flex-col items-center justify-center">
+                            <span className="text-[20px] lg:text-[30px] font-black">
+                                {/* {calculateYearCount()} */}
+                                2+
+                            </span>
+                            <span className="text-xs font-semibold whitespace-pre-wrap">
+                                yr. hands-on
                             </span>
                         </div>
                     </motion.div>
@@ -134,12 +91,48 @@ const BentoGrid = () => {
                             ...contentVariants.visible,
                             transition: {
                                 ...contentVariants.visible.transition,
+                                delay: 0.4,
+                            },
+                        },
+                    }}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-br-[35px] rounded-t-[35px] cursor-pointer hover:text-secondary hover:font-black transition-all ease-in-out duration-500`}
+                    onClick={() => {
+                        window.open('/SameerKhan.resume.pdf', '_blank');
+                    }}
+                >
+                    <div className="flex items-center justify-center">
+                        <span className="text-xs font-bold text-center uppercase">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="w-8 h-8 mb-1 mx-auto"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
+                                    clipRule="evenodd"
+                                />
+                                <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                            </svg>
+                            Resume
+                        </span>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    variants={{
+                        ...contentVariants,
+                        visible: {
+                            ...contentVariants.visible,
+                            transition: {
+                                ...contentVariants.visible.transition,
                                 delay: 0.1,
                             },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-[35px] cursor-pointer hover:text-secondary hover:font-black transition-all ease-in-out duration-500`}
-                    onClick={() => router.push("/about")}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-[35px] cursor-pointer hover:text-secondary hover:font-bold transition-all ease-in-out duration-500`}
+                // onClick={() => router.push("/about")}
                 >
                     <div className="flex items-center justify-center">
                         <span className="text-xs font-bold text-center uppercase">
@@ -168,10 +161,10 @@ const BentoGrid = () => {
                             transition: { ...contentVariants.visible.transition, delay: 0 },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 group rounded-b-[35px] rounded-tl-[35px] cursor-pointer`}
+                    className={`${boxStyle} text-gray-800  hover:font-bold transition-all dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 group rounded-b-[35px] rounded-tl-[35px] cursor-pointer`}
                     onClick={() =>
                         window.open(
-                            "https://calendly.com/mdazlaanzubair/virtual-interaction/",
+                            "https://calendly.com/muhammadsameer2016/30min",
                             "_blank"
                         )
                     }
@@ -182,36 +175,40 @@ const BentoGrid = () => {
                         </h1>
                     </div>
                 </motion.div>
-                <motion.div
-                    variants={{
-                        ...contentVariants,
-                        visible: {
-                            ...contentVariants.visible,
-                            transition: { ...contentVariants.visible.transition, delay: 0.5 },
-                        },
-                    }}
-                    className={`${boxStyle} bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 row-span-2 rounded-r-[45px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
-                    onClick={() => router.push("/projects")}
+                <Link to="projects"
+                    className={`${boxStyle} bg-white  hover:font-bold transition-all dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 row-span-2 rounded-r-[45px] cursor-pointer ease-in-out duration-500`}
                 >
-                    <span className="text-lg font-semibold [writing-mode:vertical-lr] rotate-180 uppercase">
-                        Side Projects
-                    </span>
-                </motion.div>
-                <motion.div
-                    variants={{
-                        ...contentVariants,
-                        visible: {
-                            ...contentVariants.visible,
-                            transition: { ...contentVariants.visible.transition, delay: 0.6 },
-                        },
-                    }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 col-span-2 rounded-t-[40px] cursor-pointer rounded-l-[40px] font-semibold hover:text-secondary hover:font-bold transition-all ease-in-out duration-500`}
-                    onClick={() => router.push("/work")}
-                >
-                    <span className="flex items-center justify-center h-[100px] uppercase">
-                        Case Studies
-                    </span>
-                </motion.div>
+                    <motion.div
+                        variants={{
+                            ...contentVariants,
+                            visible: {
+                                ...contentVariants.visible,
+                                transition: { ...contentVariants.visible.transition, delay: 0.5 },
+                            },
+                        }}
+
+                    // onClick={() => router.push("/projects")}
+                    >
+                        <span className="text-lg text-nowrap font-semibold [writing-mode:vertical-lr] rotate-180 uppercase">
+                            Side Projects
+                        </span>
+                    </motion.div>
+                </Link>
+                <Link to="blogs" className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 col-span-2 rounded-t-[40px] cursor-pointer rounded-l-[40px] font-semibold hover:font-bold transition-all ease-in-out duration-500`}>
+                    <motion.div
+                        variants={{
+                            ...contentVariants,
+                            visible: {
+                                ...contentVariants.visible,
+                                transition: { ...contentVariants.visible.transition, delay: 0.6 },
+                            },
+                        }}
+                    >
+                        <span className="flex items-center justify-center h-[100px] uppercase">
+                            Case Studies
+                        </span>
+                    </motion.div>
+                </Link>
                 <motion.div
                     variants={{
                         ...contentVariants,
@@ -280,8 +277,8 @@ const BentoGrid = () => {
                         <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
                     </svg>
                 </motion.div>
-            </motion.div>
-        </div>
+            </motion.div >
+        </div >
     );
 };
 

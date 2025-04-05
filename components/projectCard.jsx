@@ -16,10 +16,10 @@ const ProjectCard = ({ title, description, tags, link, img, item }) => {
                 boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
             }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="relative block bg-white dark:bg-gray-900 rounded-2xl dark:border dark:border-gray-800 shadow-lg w-full overflow-hidden group transition-all duration-300 p-0"
+            className="relative block bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-800 shadow-lg w-full overflow-hidden group transition-all duration-300 p-0"
         >
             {/* Background Image */}
-            <div className="relative overflow-hidden rounded-t-2xl h-40">
+            <div className="relative overflow-hidden rounded-t-lg h-40">
                 <img
                     src={img}
                     alt={title}
