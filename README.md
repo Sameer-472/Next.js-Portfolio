@@ -85,19 +85,6 @@ $ pnpm dev
 * **shadcn/ui**: Components generated under `/components/ui`.
 * **ESLint & Prettier**: Opinionated defaults, tweak in `.eslintrc` & `.prettierrc`.
 
-## 🧪 Testing
-
-> *Add your preferred testing setup here (Jest, Playwright, etc.).*
-
-## 🐳 Docker (optional)
-
-```bash
-# Build image
-docker build -t your‑repo .
-
-# Run container
-docker run -it -p 3000:3000 your‑repo
-```
 
 ## 🤝 Contributing
 
