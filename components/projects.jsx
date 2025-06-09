@@ -82,12 +82,12 @@ export default function Projects() {
             demo: "https://github.com/Sameer-472/Next.js-Authentication",
             code: "https://github.com/Sameer-472/Next.js-Authentication",
             sourceCodeEnable: true,
-            tech: ["Typescript", "Next.js", "Next.js Auth", "Zod", "Prisma DB" , "Neon"]
+            tech: ["Typescript", "Next.js", "Next.js Auth", "Zod", "Prisma DB", "Neon"]
         },
     ]
 
-    const [projects, setProjects] = useState(reactProjects);
-    const [status, setStatus] = useState("reactProject")
+    const [projects, setProjects] = useState(nextProjects);
+    const [status, setStatus] = useState("nextProjects")
 
 
     return (
@@ -99,14 +99,16 @@ export default function Projects() {
                 <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">Showcasing My Work 💡</h2>
                 <p className="dark:text-gray-400 text-gray-500 mb-8 text-center px-6">A glimpse into my personal and professional projects—where ideas turn into reality.</p>
                 <div className="flex justify-between gap-2 mb-5">
+                    <Button variant={status == "nextProjects" ? "default" : "outline"} onClick={() => {
+                        setProjects(nextProjects)
+                        setStatus("nextProjects")
+                    }} >Next.js Projects</Button>
+
                     <Button onClick={() => {
                         setProjects(reactProjects)
                         setStatus("reactProject")
                     }} variant={status == "reactProject" ? "default" : "outline"}>React Projects</Button>
-                    <Button variant={status == "nextProject" ? "default" : "outline"} onClick={() => {
-                        setProjects(nextProjects)
-                        setStatus("nextProjects")
-                    }} >Next.js Projects</Button>
+
                     <Button variant={status == "web3Project" ? "default" : "outline"} onClick={() => {
                         setProjects(web3Projects)
                         setStatus("web3Project")
