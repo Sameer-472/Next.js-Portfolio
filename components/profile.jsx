@@ -7,6 +7,7 @@ import { SiGit, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiTailwind
 import useModalStore from "@/store/useModalStore";
 import BentoGrid from "./BentoGrid";
 import Link from "next/link";
+import { Element } from "react-scroll";
 // Define icons and their initial positions
 // const icons = [
 //   { src: "/assets/react-svg.svg", angle: 0 }, // Top
@@ -132,7 +133,7 @@ export function Profile() {
     //     </div>
     //   </Element>
     // </motion.div>
-    <div className="flex flex-col w-full mx-auto px-6 lg:px-32 overflow-clip mt-10">
+    <Element name="home" className="flex flex-col w-full mx-auto px-6 lg:px-32 overflow-clip mt-10">
       <motion.section
         variants={contentContainerVariants}
         initial="hidden"
@@ -195,6 +196,6 @@ export function Profile() {
           {/* <IconSlider icons={techLogosArrayComplete} /> */}
         </motion.div>
       </motion.section>
-    </div>
+    </Element >
   );
 }

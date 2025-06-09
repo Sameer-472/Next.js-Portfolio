@@ -21,7 +21,7 @@ export default function ContactInfo() {
 
                 <div
                     name="contact"
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6 dark:bg-[#1e293b] bg-white dark:text-white text-gray-600 rounded-lg shadow-xl w-full px-4 md:px-6 py-6"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-6 dark:bg-[#18181B] bg-white dark:text-white text-gray-600 rounded-lg shadow-xl w-full px-4 md:px-6 py-6"
                 >
                     {/* <div className="relative w-full h-64 md:h-auto rounded-lg shadow-xl overflow-hidden">
                         <Image

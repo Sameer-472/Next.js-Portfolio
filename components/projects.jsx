@@ -19,16 +19,7 @@ export default function Projects() {
             sourceCodeEnable: false,
             tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"]
         },
-        {
-            name: "Full Stack Discord Clone",
-            details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
-            overview: "The Discord Clone aims to provide a real-time, feature-rich communication platform where users can engage in voice, video, and text conversations. Designed for online communities, it supports seamless server creation, role-based permissions, and interactive messaging.",
-            img: "/assets/discord-image.jpg",
-            demo: "https://github.com/Sameer-472/Discord-Clone",
-            code: "https://github.com/Sameer-472/Discord-Clone",
-            sourceCodeEnable: true,
-            tech: ["Typescript", "Next.js", "Socket.io", "Zod", "Clerk"]
-        },
+
         // {
         //     name: "Full Stack Discord Clone",
         //     details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
@@ -72,6 +63,29 @@ export default function Projects() {
         },
     ]
 
+    const nextProjects = [
+        {
+            name: "Full Stack Discord Clone",
+            details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
+            overview: "The Discord Clone aims to provide a real-time, feature-rich communication platform where users can engage in voice, video, and text conversations. Designed for online communities, it supports seamless server creation, role-based permissions, and interactive messaging.",
+            img: "/assets/discord-image.jpg",
+            demo: "https://github.com/Sameer-472/Discord-Clone",
+            code: "https://github.com/Sameer-472/Discord-Clone",
+            sourceCodeEnable: true,
+            tech: ["Typescript", "Next.js", "Socket.io", "Zod", "Clerk"]
+        },
+        {
+            name: "Next.js Authentication",
+            details: "Build the Next auth toolkit using the newest Next Auth v5 (Auth.js).Worked on Two Factor Authentication (2FA), Forgot Password functionality, Email Verification functionality, Credential Login, OAuth (Google & Github) Login and much more.",
+            overview: "Build the Next auth toolkit using the newest Next Auth v5 (Auth.js).Worked on Two Factor Authentication (2FA), Forgot Password functionality, Email Verification functionality, Credential Login, OAuth (Google & Github) Login and much more",
+            img: "/assets/Next auth.png",
+            demo: "https://github.com/Sameer-472/Next.js-Authentication",
+            code: "https://github.com/Sameer-472/Next.js-Authentication",
+            sourceCodeEnable: true,
+            tech: ["Typescript", "Next.js", "Next.js Auth", "Zod", "Prisma DB" , "Neon"]
+        },
+    ]
+
     const [projects, setProjects] = useState(reactProjects);
     const [status, setStatus] = useState("reactProject")
 
@@ -89,6 +103,10 @@ export default function Projects() {
                         setProjects(reactProjects)
                         setStatus("reactProject")
                     }} variant={status == "reactProject" ? "default" : "outline"}>React Projects</Button>
+                    <Button variant={status == "nextProject" ? "default" : "outline"} onClick={() => {
+                        setProjects(nextProjects)
+                        setStatus("nextProjects")
+                    }} >Next.js Projects</Button>
                     <Button variant={status == "web3Project" ? "default" : "outline"} onClick={() => {
                         setProjects(web3Projects)
                         setStatus("web3Project")

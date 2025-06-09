@@ -104,7 +104,7 @@ export default function Timeline() {
                                     boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
                                 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                                className={`p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg
+                                className={`p-6 bg-white dark:bg-[#18181B] rounded-lg dark:border dark:border-gray-600 shadow-lg
                             w-full md:w-[45%] 
                             ${index % 2 === 0 ? "ml-auto" : "mr-auto"} 
                             md:mt-0 mt-10

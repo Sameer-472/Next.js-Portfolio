@@ -37,7 +37,7 @@ const Skills = () => {
                             whileHover={{ scale: 1.05, boxShadow: "0px 4px 15px rgba(0,0,0,0.3)" }}
                             whileTap={{ scale: 0.97 }}
                             transition={{ type: "spring", stiffness: 300 }}
-                            className="flex items-center gap-4 p-4  bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg cursor-pointer transition-all duration-300"
+                            className="flex items-center gap-4 p-4  bg-white dark:bg-[#18181B] rounded-lg dark:border dark:border-gray-600 shadow-lg cursor-pointer transition-all duration-300"
                         >
                             {/* Rotating Icon on Hover */}
                             <motion.div

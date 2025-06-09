@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("inter.className", "bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-950 ")}
+        className={cn("inter.className", "bg-[#18181B] dark:bg-gradient-to-b dark:[#18181B]")}
         suppressHydrationWarning
       >
         <ThemeProvider

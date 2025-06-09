@@ -62,7 +62,7 @@ const BentoGrid = () => {
                         alt="profile-pic"
                     />
                 </motion.div>
-                <Link to="experience" className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-gray-900 shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`} className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-gray-900 shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`}>
+                <Link to="experience" className={`${boxStyle} rounded-t-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary hover:font-bold bg-white dark:bg-[#18181B] shadow-lg text-gray-800 dark:text-white transition-all ease-in-out duration-500 dark:border dark:border-gray-600`}>
                     <motion.div
                         variants={{
                             ...contentVariants,
@@ -95,7 +95,7 @@ const BentoGrid = () => {
                             },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-br-[35px] rounded-t-[35px] cursor-pointer hover:text-secondary hover:font-black transition-all ease-in-out duration-500`}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 rounded-br-[35px] rounded-t-[35px] cursor-pointer hover:text-secondary hover:font-black transition-all ease-in-out duration-500`}
                     onClick={() => {
                         window.open('/SameerKhan.resume.pdf', '_blank');
                     }}
@@ -131,7 +131,7 @@ const BentoGrid = () => {
                             },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-[35px] cursor-pointer hover:text-secondary hover:font-bold transition-all ease-in-out duration-500`}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 rounded-[35px] cursor-pointer hover:text-secondary hover:font-bold transition-all ease-in-out duration-500`}
                 // onClick={() => router.push("/about")}
                 >
                     <div className="flex items-center justify-center">
@@ -161,7 +161,7 @@ const BentoGrid = () => {
                             transition: { ...contentVariants.visible.transition, delay: 0 },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800  hover:font-bold transition-all dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 group rounded-b-[35px] rounded-tl-[35px] cursor-pointer`}
+                    className={`${boxStyle} text-gray-800  hover:font-bold transition-all dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 group rounded-b-[35px] rounded-tl-[35px] cursor-pointer`}
                     onClick={() =>
                         window.open(
                             "https://calendly.com/muhammadsameer2016/30min",
@@ -176,7 +176,7 @@ const BentoGrid = () => {
                     </div>
                 </motion.div>
                 <Link to="projects"
-                    className={`${boxStyle} bg-white  hover:font-bold transition-all dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 row-span-2 rounded-r-[45px] cursor-pointer ease-in-out duration-500`}
+                    className={`${boxStyle} bg-white  hover:font-bold transition-all dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 row-span-2 rounded-r-[45px] cursor-pointer ease-in-out duration-500`}
                 >
                     <motion.div
                         variants={{
@@ -194,7 +194,7 @@ const BentoGrid = () => {
                         </span>
                     </motion.div>
                 </Link>
-                <Link to="blogs" className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 col-span-2 rounded-t-[40px] cursor-pointer rounded-l-[40px] font-semibold hover:font-bold transition-all ease-in-out duration-500`}>
+                <Link to="blogs" className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 col-span-2 rounded-t-[40px] cursor-pointer rounded-l-[40px] font-semibold hover:font-bold transition-all ease-in-out duration-500`}>
                     <motion.div
                         variants={{
                             ...contentVariants,
@@ -217,7 +217,7 @@ const BentoGrid = () => {
                             transition: { ...contentVariants.visible.transition, delay: 0.7 },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
                     onClick={() =>
                         window.open("https://www.linkedin.com/in/muhammad-sameer-27ba2a172/", "_blank")
                     }
@@ -238,7 +238,7 @@ const BentoGrid = () => {
                             transition: { ...contentVariants.visible.transition, delay: 0.8 },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-l-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
                     onClick={() =>
                         window.open("https://twitter.com/Sameerkhan_45", "_blank")
                     }
@@ -259,7 +259,7 @@ const BentoGrid = () => {
                             transition: { ...contentVariants.visible.transition, delay: 0.9 },
                         },
                     }}
-                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-gray-900 shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-r-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
+                    className={`${boxStyle} text-gray-800 dark:text-white bg-white dark:bg-[#18181B] shadow-lg dark:border dark:border-gray-600 rounded-b-[35px] rounded-r-[35px] cursor-pointer hover:text-secondary transition-all ease-in-out duration-500`}
                     onClick={() =>
                         window.open("https://github.com/Sameer-472", "_blank")
                     }

@@ -28,7 +28,7 @@ export default function LoaderWrapper({ children }) {
     }, []);
 
     return loading ?
-        <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-gray-900 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-white dark:bg-[#18181B] z-50">
             <div className="loader"></div>
         </div>
         : <>{children}</>; // Show loader until loading is false

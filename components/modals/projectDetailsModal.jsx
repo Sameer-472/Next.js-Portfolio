@@ -17,7 +17,7 @@ const ProjectDetailsModal = () => {
         >
             <div className="p-6 max-h-[70vh] overflow-y-auto">
                 <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div className="col-span-4 flex flex-col gap-4 bg-gray-900 p-6 rounded-lg shadow-lg text-white">
+                    <div className="col-span-4 flex flex-col gap-4 bg-[#18181B] p-6 rounded-lg shadow-lg text-white">
                         <h3 className="text-lg font-semibold">
                             External Links
                         </h3>

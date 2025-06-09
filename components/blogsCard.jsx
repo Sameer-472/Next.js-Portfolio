@@ -11,7 +11,7 @@ const BlogCard = ({ title, description, date, tags, link }) => {
         boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
       }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
-      className="block p-6 bg-white dark:bg-gray-900 rounded-lg dark:border dark:border-gray-600 shadow-lg w-full"
+      className="block p-6 bg-white dark:bg-[#18181B] rounded-lg dark:border dark:border-gray-600 shadow-lg w-full"
     >
       <h3 className="text-xl font-semibold text-gray-600 dark:text-white flex justify-between items-center gap-2">
         {title}
