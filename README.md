@@ -40,8 +40,8 @@ A concise one‑sentence description of what your project does and who it’s fo
 
 ```bash
 # 1. Clone the repository
-$ git clone https://github.com/<your‑username>/<your‑repo>.git
-$ cd <your‑repo>
+$ git clone https://github.com/Sameer-472/Next.js-Portfolio.git
+$ cd Next.js-Portfolio
 
 # 2. Install dependencies
 $ pnpm install   # or npm install / yarn install
