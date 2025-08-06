@@ -8,6 +8,7 @@ import useModalStore from "@/store/useModalStore";
 import BentoGrid from "./BentoGrid";
 import Link from "next/link";
 import { Element } from "react-scroll";
+import Transition from "./Transition";
 // Define icons and their initial positions
 // const icons = [
 //   { src: "/assets/react-svg.svg", angle: 0 }, // Top
@@ -169,7 +170,7 @@ export function Profile() {
                 variants={contentVariants}
                 className="text-base leading-relaxed text-gray-600 dark:text-white tracking-normal font-semibold mb-3"
               >
-                I'm a Frontend Developer passionate about building user-friendly and scalable web applications.
+                I make<Transition /> passionate about building user-friendly and scalable web applications.
                 I specialize in <span className="text-purple-500">React</span>, <span className="text-purple-500">JavaScript</span>, and modern UI frameworks.
               </motion.p>
 
