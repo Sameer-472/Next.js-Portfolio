@@ -35,7 +35,7 @@ export default function ContactInfo() {
 
                     <div className="space-y-6 p-3 md:p-6">
                         <h3 className="text-xl font-bold">Contact Information</h3>
-                        <ContactItem icon={Mail} label="Email" value="muhammadsameer2016@yahoo.com" iconColor="text-blue-400" />
+                        <ContactItem icon={Mail} label="Email" value="msameerkhan407@gmail.com" iconColor="text-blue-400" />
                         <ContactItem icon={Phone} label="Phone" value="+92 3163136464" iconColor="text-green-400" />
                         <ContactItem icon={MapPin} label="Location" value="Karachi, Pakistan" iconColor="text-red-400" />
                         <ContactItem

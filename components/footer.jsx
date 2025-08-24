@@ -18,7 +18,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/sameer-khan472/" target="_blank" rel="noopener noreferrer">
                             <Linkedin className="w-6 h-6 transition-transform duration-300 hover:text-blue-500" />
                         </a>
-                        <a href="mailto:muhammadsameer2016@yahoo.com">
+                        <a href="mailto:msameerkhan407@gmail.com">
                             <Mail className="w-6 h-6 transition-transform duration-300 hover:text-blue-500" />
                         </a>
                         <a href="https://x.com/Sameerkhan_45" target="_blank" rel="noopener noreferrer">
