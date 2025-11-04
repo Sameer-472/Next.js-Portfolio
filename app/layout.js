@@ -34,10 +34,10 @@ export default function RootLayout({ children }) {
           defaultTheme="dark"
         >
           <Loader>
-            <Navbar />
+            {/* <Navbar /> */}
             {/* <Sidebar /> */}
             {children}
-            <ModalProvider />
+            {/* <ModalProvider /> */}
           </Loader>
         </ThemeProvider>
       </body>

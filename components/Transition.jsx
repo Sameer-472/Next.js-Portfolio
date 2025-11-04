@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import TextTransition from "./text";
-import { config } from "@react-spring/web";
+// import { config } from "@react-spring/web";
+// import {config} from "@react-spring/web";
 const TEXTS = ["website", "backend", "app"];
 
 export default function Transition() {
@@ -18,9 +19,9 @@ export default function Transition() {
 
   return (
     <span className="ml-2 text-white">
-      <TextTransition inline springConfig={config.gentle}>
+      {/* <TextTransition inline springConfig={config.gentle}>
         {TEXTS[index % TEXTS.length]}
-      </TextTransition>
+      </TextTransition> */}
       s.
     </span>
   );
