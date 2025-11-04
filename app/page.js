@@ -8,7 +8,7 @@ import Timeline from "@/components/Timeline";
 
 export default function Home() {
   return (
-    <div id='scrollContainer' name="scrollContainer" className="min-h-screen ">
+    <main id='scrollContainer' name="scrollContainer" className="min-h-screen">
       <Profile />
       <Projects />
       <Timeline />
@@ -16,6 +16,6 @@ export default function Home() {
       <Skills />
       <ContactInfo />
       <Footer />
-    </div>
+    </main>
   );
 }
