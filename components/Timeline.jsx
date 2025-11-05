@@ -11,6 +11,19 @@ export default function Timeline() {
     const timelineData = [
         {
             type: "work",
+            title: "Mid level Frontend Developer",
+            company: "ME Digital Group.",
+            link: "https://www.linkedin.com/company/medigitalgroup/",
+            duration: "2025 - Present",
+            points: [
+                "Refactor existing GSP (Groovy Server Pages) templates to align with Tailwind utility classes for maintainable and scalable UI components",
+                "Implemented internationalization (i18n) features across the application to support multiple regions, including Riyadh (Saudi Arabia) and Dubai (UAE)",
+                "Created new Groovy controllers to define and manage application routes, ensuring smooth integration of RESTful APIs within the Grails framework.",
+            ],
+            skills: ["React", "Redux", "JavaScript", "Antd" , "Tailwind" , "Grails"],
+        },
+        {
+            type: "work",
             title: "Frontend Developer",
             company: "Transviti Pvt. Ltd.",
             link: "https://www.linkedin.com/company/transviti/",
