@@ -27,7 +27,7 @@ export default function Timeline() {
             title: "Frontend Developer",
             company: "Transviti Pvt. Ltd.",
             link: "https://www.linkedin.com/company/transviti/",
-            duration: "2023 - Present",
+            duration: "2023 - 2025",
             points: [
                 "Developed & managed a variety of projects including enterprise solutions.",
                 "Built a dynamic dashboard based on the latest plots and charts using g2plots.",
