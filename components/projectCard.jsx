@@ -13,7 +13,7 @@ const ProjectCard = ({ title, description, tags, link, img, item }) => {
             target="_blank"
             whileHover={{
                 y: -8,
-                boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
+                // boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
             }}
             transition={{ type: "spring", stiffness: 200, damping: 15 }}
             className="relative block bg-white dark:bg-[#18181B] rounded-lg dark:border dark:border-gray-800 shadow-lg w-full overflow-hidden group transition-all duration-300 p-0"
