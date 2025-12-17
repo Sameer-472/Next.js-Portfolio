@@ -11,6 +11,7 @@ import { Element } from "react-scroll";
 import Transition from "./Transition";
 import { Download } from "lucide-react";
 import Image from "next/image";
+
 // Define icons and their initial positions
 // const icons = [
 //   { src: "/assets/react-svg.svg", angle: 0 }, // Top
@@ -44,11 +45,6 @@ const socialLinks = [
 
 
 export function Profile() {
-  const [rotation, setRotation] = useState(0);
-
-  const { height } = useWindowDimensions();
-
-  const { openModal } = useModalStore();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,27 +53,6 @@ export function Profile() {
     return () => clearInterval(interval);
   }, []);
 
-  const contentContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.23,
-      },
-    },
-  };
-
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: "easeOut",
-        duration: 0.3,
-      },
-    },
-  };
 
   return (
     // <motion.div
@@ -232,9 +207,9 @@ export function Profile() {
             Sameer Khan
           </h1>
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-sm md:text-base">
-            <span className="text-purple-500">Software Engineer</span>
-            <span className="text-foreground">•</span>
             <span className="text-purple-500"><Transition /></span>
+            <span className="text-foreground">•</span>
+            <span className="text-purple-500">Open to Work</span>
           </div>
         </div>
 

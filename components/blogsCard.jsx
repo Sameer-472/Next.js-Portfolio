@@ -8,7 +8,7 @@ const BlogCard = ({ title, description, date, tags, link }) => {
       target="_blank"
       whileHover={{
         scale: 1.01, // Slight zoom
-        boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
+        // boxShadow: "0px 4px 25px rgba(80, 130, 255, 0.3)",
       }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
       className="block p-6 bg-white dark:bg-[#18181B] rounded-lg dark:border dark:border-gray-600 shadow-lg w-full"

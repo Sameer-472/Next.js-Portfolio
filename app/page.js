@@ -3,7 +3,7 @@ import ContactInfo from "@/components/contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/footer";
 import { Profile } from "@/components/profile";
-import Projects from "@/components/projects";
+import FeatureProjects from "@/components/featureProjects";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 
@@ -16,10 +16,10 @@ export default function Home() {
       <section className="px-6 py-4 space-y-16">
         <Profile />
         <Experience />
-        <Projects />
+        <FeatureProjects />
         {/* <Timeline /> */}
         <Blogs />
-        <Skills />
+        {/* <Skills /> */}
         <ContactInfo />
         <Footer />
       </section>

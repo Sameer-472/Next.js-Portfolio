@@ -7,11 +7,7 @@ import { Element } from "react-scroll";
 
 export default function ContactInfo() {
     return (
-        <motion.div initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100 }}
-            viewport={{ once: false }}>
-            <Element className="flex flex-col items-center mx-auto px-6 lg:px-32 py-12">
+            <Element className="flex flex-col items-center mx-auto py-12">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 dark:text-white text-gray-800">
                     Let's Connect
                 </h2>
@@ -56,16 +52,12 @@ export default function ContactInfo() {
                     </div>
                 </div>
             </Element>
-        </motion.div>
     );
 }
 
 function ContactItem({ icon: Icon, label, value, iconColor }) {
     return (
-        <motion.div initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100 }}
-            viewport={{ once: false }}>
+       
             <div className="flex items-center gap-4">
                 <div className="p-3 dark:bg-[#334155] bg-white shadow rounded-lg">
                     <Icon className={`w-5 h-5 sm:w-6 sm:h-6 ${iconColor}`} />
@@ -75,6 +67,5 @@ function ContactItem({ icon: Icon, label, value, iconColor }) {
                     <p className="text-sm md:font-medium">{value}</p>
                 </div>
             </div>
-        </motion.div>
     );
 }

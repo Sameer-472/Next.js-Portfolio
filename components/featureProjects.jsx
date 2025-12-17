@@ -6,8 +6,13 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function Projects() {
+export default function FeatureProjects() {
+  const pathName = usePathname();
+
+  const isProjectPage = pathName === "/projects";
+
   const reactProjects = [
     {
       name: "Risk Management System",
@@ -118,8 +123,31 @@ export default function Projects() {
     },
   ];
 
-  const [projects, setProjects] = useState(nextProjects);
-  const [status, setStatus] = useState("nextProjects");
+  const allProjects = [...reactProjects, ...web3Projects, ...nextProjects];
+  const pillsButtons = [
+    {
+      title: "All",
+      status: "allProjects",
+      data: allProjects,
+    },
+    {
+      title: "Next",
+      status: "nextProjects",
+      data: nextProjects,
+    },
+    {
+      title: "React",
+      status: "reactProjects",
+      data: reactProjects,
+    },
+    {
+      title: "Web3",
+      status: "web3Projects",
+      data: web3Projects,
+    },
+  ];
+  const [projects, setProjects] = useState(allProjects);
+  const [status, setStatus] = useState("allProjects");
 
   return (
     <motion.div
@@ -137,38 +165,21 @@ export default function Projects() {
           into reality.
         </p>
         <div className="flex gap-2 mb-5">
-          <Button
-            variant={status == "nextProjects" ? "default" : "outline"}
-            onClick={() => {
-              setProjects(nextProjects);
-              setStatus("nextProjects");
-            }}
-          >
-            Next.js Projects
-          </Button>
-
-          <Button
-            onClick={() => {
-              setProjects(reactProjects);
-              setStatus("reactProject");
-            }}
-            variant={status == "reactProject" ? "default" : "outline"}
-          >
-            React Projects
-          </Button>
-
-          <Button
-            variant={status == "web3Project" ? "default" : "outline"}
-            onClick={() => {
-              setProjects(web3Projects);
-              setStatus("web3Project");
-            }}
-          >
-            Web 3 Projects
-          </Button>
+          {isProjectPage &&
+            pillsButtons.map((item, index) => (
+              <Button
+                variant={status == item.status ? "default" : "outline"}
+                onClick={() => {
+                  setProjects(item.data);
+                  setStatus(item.status);
+                }}
+              >
+                {item.title}
+              </Button>
+            ))}
         </div>
         <div className="relative w-full grid grid-cols-12 gap-6">
-          {projects.map((item, index) => (
+          {projects.slice(0,3).map((item, index) => (
             <div key={index} className="col-span-12 md:col-span-6">
               <ProjectCard
                 key={index}
@@ -182,14 +193,16 @@ export default function Projects() {
             </div>
           ))}
         </div>
-        <div className="mt-6 flex justify-center w-full">
-          <Link href="/projects" className="w-full focus-ring rounded-lg">
-            <div className="w-full bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg shadow-primary/15 transition-all py-3 border border-border flex items-center justify-center gap-2 hover:text-primary/80 hover:bg-accent/30">
-              <span>View more</span>
-              <ArrowRight className="inline-block w-[18px] h-[18px]" />
-            </div>
-          </Link>
-        </div>
+        {!isProjectPage && (
+          <div className="mt-6 flex justify-center w-full">
+            <Link href="/projects" className="w-full focus-ring rounded-lg">
+              <div className="w-full bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg shadow-primary/15 transition-all py-3 border border-border flex items-center justify-center gap-2 hover:text-primary/80 hover:bg-accent/30">
+                <span>View more</span>
+                <ArrowRight className="inline-block w-[18px] h-[18px]" />
+              </div>
+            </Link>
+          </div>
+        )}
       </Element>
     </motion.div>
   );
