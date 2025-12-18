@@ -157,9 +157,10 @@ const Navbar = memo(() => {
             </Link>
           
             {/* Theme Toggle */}
-            <button
+            {/* <button
               onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              // aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              aria-label={`Switch to dark theme`}
               className="relative flex items-center justify-center w-9 h-9 rounded-lg text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-300 focus-ring overflow-hidden ml-2"
             >
               <Sun
@@ -178,7 +179,7 @@ const Navbar = memo(() => {
                 }`}
                 size={18}
               />
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Controls - Right */}

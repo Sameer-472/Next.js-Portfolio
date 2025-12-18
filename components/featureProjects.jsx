@@ -146,9 +146,8 @@ export default function FeatureProjects() {
       data: web3Projects,
     },
   ];
-  const [projects, setProjects] = useState(allProjects);
+  const [projects, setProjects] = useState(isProjectPage ? allProjects : allProjects.slice(0,2));
   const [status, setStatus] = useState("allProjects");
-
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -166,8 +165,9 @@ export default function FeatureProjects() {
         </p>
         <div className="flex gap-2 mb-5">
           {isProjectPage &&
-            pillsButtons.map((item, index) => (
+            pillsButtons.map((item) => (
               <Button
+              key={item.title}
                 variant={status == item.status ? "default" : "outline"}
                 onClick={() => {
                   setProjects(item.data);
@@ -179,7 +179,7 @@ export default function FeatureProjects() {
             ))}
         </div>
         <div className="relative w-full grid grid-cols-12 gap-6">
-          {projects.slice(0,3).map((item, index) => (
+          {projects.map((item, index) => (
             <div key={index} className="col-span-12 md:col-span-6">
               <ProjectCard
                 key={index}

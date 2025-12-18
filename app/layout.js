@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("inter.className", "bg-[#18181B] dark:bg-gradient-to-b dark:[#18181B]")}
+        className={cn("inter.className", "font-sans text-foreground max-w-[1000px] mx-auto pt-12 flex flex-col min-h-screen antialiased")}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -35,30 +35,21 @@ export default function RootLayout({ children }) {
           defaultTheme="dark"
         >
           <Loader>
-            <html lang="en" suppressHydrationWarning>
-              <head>
-                {/* Preload critical resources */}
-                <link rel="preload" href="/profpic.webp" as="image" />
-              </head>
-              <body className={`font-sans bg-background text-foreground max-w-[1000px] mx-auto pt-12 flex flex-col min-h-screen antialiased`}>
-                <ThemeProvider
-                  attribute="class"
-                  defaultTheme="dark"
-                  enableSystem={true}
-                  storageKey="theme"
-                >
-                  {/* <ScrollProgress /> */}
-                   <Navbar />
-                  <main className="flex-grow">
-                    <div className="max-w-[1000px] px-4 py-12">
-                      {children}
-                    </div>
-                  </main>
-                  {/* <Footer /> */}
-                </ThemeProvider>
-                <div className='mb-32 md:mb-16'></div>
-              </body>
-            </html>
+
+            <head>
+              {/* Preload critical resources */}
+              <link rel="preload" href="/profpic.webp" as="image" />
+            </head>
+            {/* <ScrollProgress /> */}
+            <Navbar />
+            <main className="flex-grow">
+              <div className="max-w-[1000px] px-4 py-12">
+                {children}
+              </div>
+            </main>
+            {/* <Footer /> */}
+
+            <div className='mb-32 md:mb-16'></div>
           </Loader>
         </ThemeProvider>
       </body>

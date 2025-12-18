@@ -37,7 +37,9 @@ const blogs = [
 
 export default function Blogs() {
     const pathName = usePathname();
-    const isBlogPage = pathName === '/blogs'
+    const isBlogPage = pathName === '/blogs';
+
+    const modifiedBlogs = isBlogPage ? blogs : blogs.slice(0,2);
   return (
     <Element name="blogs">
       <motion.div
@@ -55,7 +57,7 @@ export default function Blogs() {
           industry trends.
         </p>
         <div className="relative grid grid-cols-12 gap-6 w-full">
-          {blogs.map((blog, index) => (
+          {modifiedBlogs.map((blog, index) => (
             <div key={index} className="col-span-12 md:col-span-6">
               <BlogCard
                 key={index}
