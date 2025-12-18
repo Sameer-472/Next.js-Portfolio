@@ -1,106 +1,254 @@
-"use client";
+'use client'
 
-import { ThemeToggle } from "@/components/theme-toggle";
-import { X } from "lucide-react";
-import { Menu } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-scroll";
+import { memo, useCallback, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useTheme } from 'next-themes'
+import { toZonedTime, format as formatTz } from 'date-fns-tz'
+import { Moon, Sun, Clock, Menu, X } from 'lucide-react'
 
-export function Navbar() {
+const Navbar = memo(() => {
+  const [mounted, setMounted] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [currentTime, setCurrentTime] = useState(new Date())
+  const pathname = usePathname()
 
-  const items = [
-    {
-      title: "Home",
-      key: "home",
-    },
-    {
-      title: "Experience",
-      key: "experience",
-    },
-    {
-      title: "Contact",
-      key: "contact",
-    },
-    {
-      title: "Projects",
-      key: "projects",
-    },
-  ]
+  useEffect(() => {
+    setMounted(true)
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 50
+          setScrolled(isScrolled)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Work', href: '#work' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
-  ];
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      clearInterval(timer)
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  const toggleTheme = useCallback((e) => {
+    // @ts-ignore - View Transitions API is not yet in all TS definitions
+    if (!document.startViewTransition) {
+      setTheme(theme === 'dark' ? 'light' : 'dark')
+      return
+    }
+
+    const x = e.clientX
+    const y = e.clientY
+    const endRadius = Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y)
+    )
+
+    // @ts-ignore
+    const transition = document.startViewTransition(() => {
+      setTheme(theme === 'dark' ? 'light' : 'dark')
+    })
+
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ]
+      document.documentElement.animate(
+        {
+          clipPath: clipPath,
+        },
+        {
+          duration: 500,
+          easing: 'ease-in',
+          pseudoElement: '::view-transition-new(root)',
+        }
+      )
+    })
+  }, [theme, setTheme])
+
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev)
+  }, [])
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const timeZone = 'America/New_York'
+  const zonedTime = toZonedTime(currentTime, timeZone)
+  const formattedTime = formatTz(zonedTime, 'HH:mm')
+
   return (
-    <nav className="z-50 fixed top-4 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-700/50 backdrop-blur-md px-6 py-4 rounded-full flex items-center gap-6 shadow-lg dark:text-white text-gray-800 text-sm leading-none max-w-[600px]">
-      {items.map(({ title, key }) => (
-        <Link
-          key={key}
-          to={key}
-          duration={800}
-          className="relative cursor-pointer text-gray-800 dark:text-white transition-all duration-300 hover:text-blue-500 dark:hover:text-blue-400 hover:scale-110 leading-none"
-        >
-          {title}
-        </Link>
-      ))}
-      {/* <ThemeToggle /> */}
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
+      scrolled
+        ? 'bg-background/95 shadow-md border-b border-border'
+        : 'bg-background/90 border-b border-transparent'
+    }`}>
+      <div className="max-w-[1000px] mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Time Display - Left (Desktop) */}
+          <div className="hidden md:flex items-center space-x-2 text-sm text-muted-foreground">
+            {/* <Clock size={16} className="text-primary" /> */}
+            <a
+              href='https://www.google.com/search?q=time'
+              target='_blank'
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors font-medium"
+            >
+              {formattedTime}
+            </a>
+          </div>
+
+          {/* Home Button - Left (Mobile) */}
+          <Link
+            href="/"
+            className="md:hidden flex items-center text-foreground hover:text-primary transition-colors font-medium"
+          >
+            Home
+          </Link>
+
+          {/* Desktop Navigation - Right */}
+          <div className="hidden md:flex items-center space-x-1">
+            <Link
+              href="/"
+              className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+                pathname === '/'
+                  ? 'text-primary-foreground bg-primary'
+                  : 'text-foreground hover:text-primary hover:bg-accent/50'
+              }`}
+            >
+              Home
+            </Link>
+            
+            <Link
+              href="/projects"
+              className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+                pathname === '/projects'
+                  ? 'text-primary-foreground bg-primary'
+                  : 'text-foreground hover:text-primary hover:bg-accent/50'
+              }`}
+            >
+              Projects
+            </Link>
+            
+            <Link
+              href="/blogs"
+              className={`px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+                pathname === '/blogs'
+                  ? 'text-primary-foreground bg-primary'
+                  : 'text-foreground hover:text-primary hover:bg-accent/50'
+              }`}
+            >
+              Blogs
+            </Link>
+          
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              className="relative flex items-center justify-center w-9 h-9 rounded-lg text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-300 focus-ring overflow-hidden ml-2"
+            >
+              <Sun
+                className={`absolute transition-all duration-500 transform ${
+                  theme === 'dark'
+                    ? 'rotate-90 scale-0 opacity-0'
+                    : 'rotate-0 scale-100 opacity-100'
+                }`}
+                size={18}
+              />
+              <Moon
+                className={`absolute transition-all duration-500 transform ${
+                  theme === 'dark'
+                    ? 'rotate-0 scale-100 opacity-100'
+                    : '-rotate-90 scale-0 opacity-0'
+                }`}
+                size={18}
+              />
+            </button>
+          </div>
+
+          {/* Mobile Controls - Right */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+              className="flex items-center justify-center w-9 h-9 rounded-lg text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-300 focus-ring overflow-hidden"
+            >
+              <Sun
+                className={`absolute transition-all duration-500 transform ${
+                  theme === 'dark'
+                    ? 'rotate-90 scale-0 opacity-0'
+                    : 'rotate-0 scale-100 opacity-100'
+                }`}
+                size={18}
+              />
+              <Moon
+                className={`absolute transition-all duration-500 transform ${
+                  theme === 'dark'
+                    ? 'rotate-0 scale-100 opacity-100'
+                    : '-rotate-90 scale-0 opacity-0'
+                }`}
+                size={18}
+              />
+            </button>
+
+            <button
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+              className="flex items-center justify-center w-9 h-9 rounded-lg text-foreground hover:text-primary hover:bg-accent/50 transition-all duration-300 focus-ring"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-border space-y-2 animate-in fade-in slide-in-from-top-2 duration-200">
+            <Link
+              href="/projects"
+              onClick={closeMobileMenu}
+              className={`block px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+                pathname === '/projects'
+                  ? 'text-primary-foreground bg-primary'
+                  : 'text-foreground hover:text-primary hover:bg-accent/50'
+              }`}
+            >
+              Projects
+            </Link>
+            
+            <Link
+              href="/blogs"
+              onClick={closeMobileMenu}
+              className={`block px-4 py-2 rounded-lg transition-all duration-200 font-medium text-sm ${
+                pathname === '/blogs'
+                  ? 'text-primary-foreground bg-primary'
+                  : 'text-foreground hover:text-primary hover:bg-accent/50'
+              }`}
+            >
+              Blogs
+            </Link>
+          </div>
+        )}
+      </div>
     </nav>
-    // <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-border">
-    //   <div className="max-w-full mx-12 py-4">
-    //     <div className={`flex items-center justify-between`}>
-    //       {/* Logo/Name */}
-    //       <div className="text-xl font-medium text-foreground">
-    //         {/* {`<Frontend Developer/>`} */}
+  )
+})
 
-    //       </div>
+Navbar.displayName = 'Navbar'
 
-    //       {/* Desktop Navigation */}
-    //       <div className="hidden md:flex items-center justify-center space-x-8">
-    //         {items.map(({ title, key }) => (
-    //           <Link
-    //             key={title}
-    //             to={key}
-    //             className="cursor-pointer text-[#fffff] hover:text-foreground transition-colors duration-200 text-base relative group font-semibold"
-    //           >
-    //             {title}
-    //             <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-200 group-hover:w-full"></span>
-    //           </Link>
-    //         ))}
-    //       </div>
-
-    //       {/* Mobile Menu Button */}
-    //       <button
-    //         onClick={() => setIsMenuOpen(!isMenuOpen)}
-    //         className="md:hidden p-2 text-[#ffff] hover:text-foreground transition-colors font-semibold"
-    //         aria-label="Toggle menu"
-    //       >
-    //         {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-    //       </button>
-    //     </div>
-
-    //     {/* Mobile Navigation */}
-    //     {isMenuOpen && (
-    //       <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-    //         <div className="flex flex-col space-y-3">
-    //           {items.map(({ title, key }) => (
-    //             <Link
-    //               key={title}
-    //               to={key}
-    //               onClick={() => setIsMenuOpen(false)}
-    //               className="cursor-pointer text-[#ffff] hover:text-foreground transition-colors duration-200 text-sm font-medium py-2"
-    //             >
-    //               {title}
-    //             </Link>
-    //           ))}
-    //         </div>
-    //       </div>
-    //     )}
-    //   </div>
-    // </nav>
-
-  );
-}
+export default Navbar

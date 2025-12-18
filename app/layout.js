@@ -3,9 +3,10 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import Loader from "@/components/loader";
-import { Navbar } from "@/components/navbar";
+// import { Navbar } from "@/components/navbar";
 import ModalProvider from "@/components/providers/modalProvider";
 import "animate.css/animate.compat.css"
+import Navbar from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,10 +35,30 @@ export default function RootLayout({ children }) {
           defaultTheme="dark"
         >
           <Loader>
-            <Navbar />
-            {/* <Sidebar /> */}
-            {children}
-            <ModalProvider />
+            <html lang="en" suppressHydrationWarning>
+              <head>
+                {/* Preload critical resources */}
+                <link rel="preload" href="/profpic.webp" as="image" />
+              </head>
+              <body className={`font-sans bg-background text-foreground max-w-[1000px] mx-auto pt-12 flex flex-col min-h-screen antialiased`}>
+                <ThemeProvider
+                  attribute="class"
+                  defaultTheme="dark"
+                  enableSystem={true}
+                  storageKey="theme"
+                >
+                  {/* <ScrollProgress /> */}
+                   <Navbar />
+                  <main className="flex-grow">
+                    <div className="max-w-[1000px] px-4 py-12">
+                      {children}
+                    </div>
+                  </main>
+                  {/* <Footer /> */}
+                </ThemeProvider>
+                <div className='mb-32 md:mb-16'></div>
+              </body>
+            </html>
           </Loader>
         </ThemeProvider>
       </body>
