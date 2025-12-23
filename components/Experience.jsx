@@ -93,7 +93,6 @@ const Experience = () => {
                 <img
                   src={exp?.logo}
                   alt={`${exp?.company} logo`}
-                  fill
                   className="object-cover"
                 />
               </div>

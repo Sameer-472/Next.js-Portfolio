@@ -157,7 +157,7 @@ const Navbar = memo(() => {
             </Link>
           
             {/* Theme Toggle */}
-            {/* <button
+            <button
               onClick={toggleTheme}
               // aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
               aria-label={`Switch to dark theme`}
@@ -179,7 +179,7 @@ const Navbar = memo(() => {
                 }`}
                 size={18}
               />
-            </button> */}
+            </button>
           </div>
 
           {/* Mobile Controls - Right */}

@@ -36,10 +36,6 @@ export default function RootLayout({ children }) {
         >
           <Loader>
 
-            <head>
-              {/* Preload critical resources */}
-              <link rel="preload" href="/profpic.webp" as="image" />
-            </head>
             {/* <ScrollProgress /> */}
             <Navbar />
             <main className="flex-grow">
