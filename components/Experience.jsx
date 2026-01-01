@@ -10,7 +10,7 @@ const Experience = () => {
       title: "Mid level Frontend Developer",
       company: "ME Digital Group.",
       link: "https://www.linkedin.com/company/medigitalgroup/",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQH3tLlfwlq9bw/company-logo_200_200/company-logo_200_200/0/1733747037221/cobone_logo?e=1767225600&v=beta&t=ynNl5Q2BJ9jC0dg961VxNnoPTvfVsr2fewDN0P8Tux0",
+      logo: "/assets/me-digital.jpg",
       duration: "2025 - Present",
       points: [
         "Refactor existing GSP (Groovy Server Pages) templates to align with Tailwind utility classes for maintainable and scalable UI components",
@@ -24,7 +24,7 @@ const Experience = () => {
       title: "Frontend Developer",
       company: "Transviti Pvt. Ltd.",
       link: "https://www.linkedin.com/company/transviti/",
-      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGBICvv7ItusA/company-logo_200_200/company-logo_200_200/0/1644004221184/transviti_logo?e=1767225600&v=beta&t=kap3e3fdnqVxrJ5vQjgci7fzQMrnHCgGXKI-MiQ05lI",
+      logo: "/assets/transviti_logo.jpg",
       duration: "2023 - 2025",
       points: [
         "Developed & managed a variety of projects including enterprise solutions.",
@@ -37,8 +37,7 @@ const Experience = () => {
       type: "work",
       title: "Web3 Frontend Developer",
       company: "SoftSync Dev",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQHVZSmeNinTQw/img-crop_100/img-crop_100/0/1725645078693?e=1767225600&v=beta&t=g23-hMxvkfB4UQvBPrwB3cXlxi-j8ad0kGnQpwDio58",
-      link: "https://www.linkedin.com/company/softsyncdev/",
+      logo: "/assets/softsync_logo.jpg",
       duration: "Jun 2023 - Aug 2023",
       points: [
         "Integrated Openzeppelin libraries for enhanced security.",
@@ -52,8 +51,7 @@ const Experience = () => {
       type: "work",
       title: "MERN Stack Trainer",
       company: "Saylani Mass IT Training Programming",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQEYX48-Uo5D5A/company-logo_200_200/B4DZV_HVYcHwAI-/0/1741594384453?e=1767225600&v=beta&t=KKAIpLcoGXqZH0SGDzV5o7Tw2hecgrPAIKi_hEYRFhc",
-      link: "https://www.linkedin.com/company/saylani-welfare-international-trust/",
+      logo: "/assets/smit_logo.jpg",
       duration: "Feb 2023 - May 2023",
       points: [
         "Provided guidance and support to students throughout the training program.",
