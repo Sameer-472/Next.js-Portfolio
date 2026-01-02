@@ -69,7 +69,7 @@ const Experience = () => {
       company: "University of Sindh",
       link: "https://www.usindh.edu.pk/",
       duration: "2018 - 2022",
-      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQF67TqDSX7QuA/company-logo_200_200/company-logo_200_200/0/1630650677266/university_of_sindh_logo?e=1767225600&v=beta&t=SrKfwnNMQM3TXSy0NJgxjyQZs573kwS77f_xLBHKja4",
+      logo: "/assets/university_of_sindh_logo.jpg",
       points: [
         "Graduated with a focus on software development and emerging technologies.",
       ],
