@@ -89,7 +89,7 @@ export function Profile() {
           <Link
             href="/SWE_Sameer Khan_resume.pdf"
             target="_blank"
-            className="px-6 py-2.5 text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-all duration-300 font-medium shadow-md hover:shadow-lg focus-ring flex items-center gap-2 bg-[#800080]"
+            className="px-6 py-2.5 text-white rounded-lg hover:bg-secondary/80 transition-all duration-300 font-medium shadow-md hover:shadow-lg focus-ring flex items-center gap-2 bg-[#800080]"
           >
             <Download size={16} />
             Resume

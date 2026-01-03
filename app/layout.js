@@ -7,6 +7,8 @@ import Loader from "@/components/loader";
 import ModalProvider from "@/components/providers/modalProvider";
 import "animate.css/animate.compat.css"
 import Navbar from "@/components/navbar";
+import Script from "next/script";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +26,29 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn("inter.className", "font-sans text-foreground max-w-[1000px] mx-auto pt-12 flex flex-col min-h-screen antialiased")}
         suppressHydrationWarning
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WELM6S4868"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-WELM6S4868');
+                `,
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

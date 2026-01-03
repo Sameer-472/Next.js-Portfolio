@@ -6,8 +6,11 @@ import { Profile } from "@/components/profile";
 import FeatureProjects from "@/components/featureProjects";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
+// import Script from "next/script";
+
 
 export default function Home() {
+
   return (
     // <div id='scrollContainer' name="scrollContainer" className="min-h-screen ">
 
