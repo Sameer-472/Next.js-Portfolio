@@ -74,8 +74,8 @@ export function Profile() {
         </div>
 
         <p className="max-w-2xl text-center md:text-left text-muted-foreground leading-relaxed">
-          <span className="text-foreground font-medium">Software Engineer</span> with <span className="text-foreground font-medium">3+ years </span> of experience designing and building scalable, enterprise-grade web applications. Skilled in Backend and Frontend technologies include{' '}
-          <span className="text-foreground font-medium">Javascript </span>, and modern frontend frameworks including <span className="text-foreground font-medium"> React, Angular, and Vue.js.</span>{' '}
+          <span className="text-foreground font-medium">Software Engineer</span> with <span className="text-foreground font-medium">4+ years </span> of experience in building and shipping <span className="text-foreground font-medium"> high traffic products</span> in middle east including <span className="text-foreground font-medium">UAE</span> and{' '}
+          <span className="text-foreground font-medium">KSA </span>using modern tech including famous Frontend Framework tech <span className="text-foreground font-medium">Next.js, React</span>{' '}
         </p>
 
         {/* CTA Buttons */}
@@ -87,7 +87,7 @@ export function Profile() {
             Get in Touch
           </a>
           <Link
-            href="/SWE_Sameer Khan_resume.pdf"
+            href="/SameerKhan.resume.pdf"
             target="_blank"
             className="px-6 py-2.5 text-white rounded-lg hover:bg-secondary/80 transition-all duration-300 font-medium shadow-md hover:shadow-lg focus-ring flex items-center gap-2 bg-[#800080]"
           >

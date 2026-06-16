@@ -4,6 +4,7 @@ import Experience from "@/components/Experience";
 import Footer from "@/components/footer";
 import { Profile } from "@/components/profile";
 import FeatureProjects from "@/components/featureProjects";
+import GitHubGraph from "@/components/GitHubGraph";
 import Skills from "@/components/Skills";
 import Timeline from "@/components/Timeline";
 // import Script from "next/script";
@@ -18,6 +19,7 @@ export default function Home() {
     <main className="flex-1">
       <section className="px-6 py-4 space-y-16">
         <Profile />
+        {/* <GitHubGraph /> */}
         <Experience />
         <FeatureProjects />
         {/* <Timeline /> */}

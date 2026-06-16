@@ -36,10 +36,10 @@ const blogs = [
 ];
 
 export default function Blogs() {
-    const pathName = usePathname();
-    const isBlogPage = pathName === '/blogs';
+  const pathName = usePathname();
+  const isBlogPage = pathName === "/blogs";
 
-    const modifiedBlogs = isBlogPage ? blogs : blogs.slice(0,2);
+  const modifiedBlogs = isBlogPage ? blogs : blogs.slice(0, 2);
   return (
     <Element name="blogs">
       <motion.div
@@ -49,13 +49,26 @@ export default function Blogs() {
         viewport={{ once: false }}
         className="flex justify-start flex-col my-5 w-full mx-auto"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
-          Blogs
-        </h2>
-        <p className="dark:text-gray-400 mb-8 text-start  text-gray-500">
-          Explore my thoughts on software development, emerging tech, and
-          industry trends.
-        </p>
+        <div className="flex justify-between">
+          <div className="flex flex-col">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
+              Blogs
+            </h2>
+            <p className="dark:text-gray-400 mb-8 text-start  text-gray-500">
+              Explore my thoughts on software development, emerging tech, and
+              industry trends.
+            </p>
+          </div>
+          {!isBlogPage && (
+            <Link href="/blogs" className="">
+              <div className="text-card-foreground text-sm hover:shadow-lg transition-all py-3 flex items-center justify-center gap-2">
+                <span>View more</span>
+                <ArrowRight className="inline-block w-[18px] h-[18px]" />
+              </div>
+            </Link>
+          )}
+        </div>
+
         <div className="relative grid grid-cols-12 gap-6 w-full">
           {modifiedBlogs.map((blog, index) => (
             <div key={index} className="col-span-12 md:col-span-6">
@@ -69,16 +82,6 @@ export default function Blogs() {
             </div>
           ))}
         </div>
-        {!isBlogPage && (
-          <div className="mt-6 flex justify-center w-full">
-            <Link href="/blogs" className="w-full focus-ring rounded-lg">
-              <div className="w-full bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg shadow-primary/15 transition-all py-3 border border-border flex items-center justify-center gap-2 hover:text-primary/80 hover:bg-accent/30">
-                <span>View more</span>
-                <ArrowRight className="inline-block w-[18px] h-[18px]" />
-              </div>
-            </Link>
-          </div>
-        )}
       </motion.div>
     </Element>
   );

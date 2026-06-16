@@ -7,6 +7,20 @@ const Experience = () => {
   const experiences = [
     {
       type: "work",
+      title: "Freelancer as a Frontend developer",
+      company: "Invespy",
+      link: "https://www.linkedin.com/company/invespy/",
+      logo: "/assets/invespy_logo.jpg",
+      duration: "2026 - Present",
+      points: [
+        "Integrated AI-powered agents into chatbot systems to enable real-time voice conversations with users.",
+        "Implemented deep linking to seamlessly redirect website users to the mobile application when installed, improving cross-platform user experience",
+        "Worked with CI/CD pipelines to automate build, testing, and continuous deployment processes",
+      ],
+      skills: ["Next", "Node", "JavaScript", "Radix", "Tailwind", "AWS"],
+    },
+    {
+      type: "work",
       title: "Mid level Frontend Developer",
       company: "ME Digital Group.",
       link: "https://www.linkedin.com/company/medigitalgroup/",

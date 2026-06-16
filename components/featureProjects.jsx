@@ -14,22 +14,6 @@ export default function FeatureProjects() {
   const isProjectPage = pathName === "/projects";
 
   const reactProjects = [
-    {
-      name: "Risk Management System",
-      details:
-        "A Risk Management System (RMS) is a structured framework that identifies, assesses, risks to safeguard an organization’s objectives.",
-      overview:
-        "ERMVare is a next-generation ERM solution perfectly aligned with COSO guidelines & ISO 31000 standards. It enables you to control the full lifecycle of your ERM framework, ensuring real-time updates, dynamic approvals, efficient risk treatment, & customized reports. ERMVare lets you",
-      img: "/assets/ermvare.png",
-      problemStatement:
-        "Organizations face a wide range of risks that can impact their operations, financial stability, and reputation. These risks may arise from regulatory compliance issues, cybersecurity threats, operational failures, or external market changes. Traditional risk management approaches are often fragmented, lack real-time monitoring, and fail to provide proactive risk mitigation strategies.",
-      solution:
-        "A Risk Management System addresses these challenges by offering a centralized platform to identify, assess, mitigate, and monitor risks effectively. By integrating real-time analytics, automated workflows, and compliance tracking, the system helps organizations make data-driven decisions, minimize potential losses, and ensure business continuity.",
-      demo: "https://r3.ermvare.com/app/register",
-      sourceCodeEnable: false,
-      tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"],
-    },
-
     // {
     //     name: "Full Stack Discord Clone",
     //     details: "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
@@ -91,16 +75,49 @@ export default function FeatureProjects() {
 
   const nextProjects = [
     {
-      name: "Full Stack Discord Clone",
+      name: "Invespy",
       details:
-        "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
+        "Invespy is an ecosystem that connects developers and channel partners to accelerate off-plan real estate investments globally.",
       overview:
-        "The Discord Clone aims to provide a real-time, feature-rich communication platform where users can engage in voice, video, and text conversations. Designed for online communities, it supports seamless server creation, role-based permissions, and interactive messaging.",
-      img: "/assets/discord-image.jpg",
-      demo: "https://github.com/Sameer-472/Discord-Clone",
-      code: "https://github.com/Sameer-472/Discord-Clone",
-      sourceCodeEnable: true,
-      tech: ["Typescript", "Next.js", "Socket.io", "Zod", "Clerk"],
+        "ERMVare is a next-generation ERM solution perfectly aligned with COSO guidelines & ISO 31000 standards. It enables you to control the full lifecycle of your ERM framework, ensuring real-time updates, dynamic approvals, efficient risk treatment, & customized reports. ERMVare lets you",
+      img: "/assets/invespy.png",
+      problemStatement:
+        "Organizations face a wide range of risks that can impact their operations, financial stability, and reputation. These risks may arise from regulatory compliance issues, cybersecurity threats, operational failures, or external market changes. Traditional risk management approaches are often fragmented, lack real-time monitoring, and fail to provide proactive risk mitigation strategies.",
+      solution:
+        "A Risk Management System addresses these challenges by offering a centralized platform to identify, assess, mitigate, and monitor risks effectively. By integrating real-time analytics, automated workflows, and compliance tracking, the system helps organizations make data-driven decisions, minimize potential losses, and ensure business continuity.",
+      demo: "https://www.invespy.io",
+      sourceCodeEnable: false,
+      tech: [, "Next", "React query", "RadixUI", "TailwindCSS"],
+    },
+    {
+      name: "Risk Management System",
+      details:
+        "A Risk Management System (RMS) is a structured framework that identifies, assesses, risks to safeguard an organization’s objectives.",
+      overview:
+        "ERMVare is a next-generation ERM solution perfectly aligned with COSO guidelines & ISO 31000 standards. It enables you to control the full lifecycle of your ERM framework, ensuring real-time updates, dynamic approvals, efficient risk treatment, & customized reports. ERMVare lets you",
+      img: "/assets/ermvare.png",
+      problemStatement:
+        "Organizations face a wide range of risks that can impact their operations, financial stability, and reputation. These risks may arise from regulatory compliance issues, cybersecurity threats, operational failures, or external market changes. Traditional risk management approaches are often fragmented, lack real-time monitoring, and fail to provide proactive risk mitigation strategies.",
+      solution:
+        "A Risk Management System addresses these challenges by offering a centralized platform to identify, assess, mitigate, and monitor risks effectively. By integrating real-time analytics, automated workflows, and compliance tracking, the system helps organizations make data-driven decisions, minimize potential losses, and ensure business continuity.",
+      demo: "https://r3.ermvare.com/app/register",
+      sourceCodeEnable: false,
+      tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"],
+    },
+    {
+      name: "Advantage",
+      details:
+        "Advantage GCC, is B2B a loyalty and rewards platform focused on delivering exclusive deals and discounts to members in the Gulf Cooperation Council (GCC) region",
+      overview:
+        "ERMVare is a next-generation ERM solution perfectly aligned with COSO guidelines & ISO 31000 standards. It enables you to control the full lifecycle of your ERM framework, ensuring real-time updates, dynamic approvals, efficient risk treatment, & customized reports. ERMVare lets you",
+      img: "/assets/advantage-gcc.png",
+      problemStatement:
+        "Organizations face a wide range of risks that can impact their operations, financial stability, and reputation. These risks may arise from regulatory compliance issues, cybersecurity threats, operational failures, or external market changes. Traditional risk management approaches are often fragmented, lack real-time monitoring, and fail to provide proactive risk mitigation strategies.",
+      solution:
+        "A Risk Management System addresses these challenges by offering a centralized platform to identify, assess, mitigate, and monitor risks effectively. By integrating real-time analytics, automated workflows, and compliance tracking, the system helps organizations make data-driven decisions, minimize potential losses, and ensure business continuity.",
+      demo: "https://www.advantagegcc.com/en/home?city=b2b-advantage-dubai",
+      sourceCodeEnable: false,
+      tech: [, "Groovy", "Grails", "Tailwind CSS", "Javascript"],
     },
     {
       name: "Next.js Authentication",
@@ -121,9 +138,39 @@ export default function FeatureProjects() {
         "Neon",
       ],
     },
+    {
+      name: "Full Stack Discord Clone",
+      details:
+        "Using Next.js building a fullstack discord clone with realtime messaging , Server and channel creation , perform audio and video call",
+      overview:
+        "The Discord Clone aims to provide a real-time, feature-rich communication platform where users can engage in voice, video, and text conversations. Designed for online communities, it supports seamless server creation, role-based permissions, and interactive messaging.",
+      img: "/assets/discord-image.jpg",
+      demo: "https://github.com/Sameer-472/Discord-Clone",
+      code: "https://github.com/Sameer-472/Discord-Clone",
+      sourceCodeEnable: true,
+      tech: ["Typescript", "Next.js", "Socket.io", "Zod", "Clerk"],
+    },
   ];
 
-  const allProjects = [...reactProjects, ...web3Projects, ...nextProjects];
+  const otherProject = [
+    // {
+    //   name: "Advantage",
+    //   details:
+    //     "Invespy is an ecosystem that connects developers and channel partners to accelerate off-plan real estate investments globally.",
+    //   overview:
+    //     "ERMVare is a next-generation ERM solution perfectly aligned with COSO guidelines & ISO 31000 standards. It enables you to control the full lifecycle of your ERM framework, ensuring real-time updates, dynamic approvals, efficient risk treatment, & customized reports. ERMVare lets you",
+    //   img: "/assets/ermvare.png",
+    //   problemStatement:
+    //     "Organizations face a wide range of risks that can impact their operations, financial stability, and reputation. These risks may arise from regulatory compliance issues, cybersecurity threats, operational failures, or external market changes. Traditional risk management approaches are often fragmented, lack real-time monitoring, and fail to provide proactive risk mitigation strategies.",
+    //   solution:
+    //     "A Risk Management System addresses these challenges by offering a centralized platform to identify, assess, mitigate, and monitor risks effectively. By integrating real-time analytics, automated workflows, and compliance tracking, the system helps organizations make data-driven decisions, minimize potential losses, and ensure business continuity.",
+    //   demo: "https://r3.ermvare.com/app/register",
+    //   sourceCodeEnable: false,
+    //   tech: [, "React", "Material UI", "Redux toolkit", "Antd V2 Plot"],
+    // },
+  ];
+
+  const allProjects = [...nextProjects, ...reactProjects, ...web3Projects];
   const pillsButtons = [
     {
       title: "All",
@@ -146,7 +193,9 @@ export default function FeatureProjects() {
       data: web3Projects,
     },
   ];
-  const [projects, setProjects] = useState(isProjectPage ? allProjects : allProjects.slice(0,2));
+  const [projects, setProjects] = useState(
+    isProjectPage ? allProjects : allProjects.slice(0, 2),
+  );
   const [status, setStatus] = useState("allProjects");
   return (
     <motion.div
@@ -156,14 +205,26 @@ export default function FeatureProjects() {
       viewport={{ once: true }}
     >
       <Element name="projects" className="flex flex-col my-10">
-        <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
-          Showcasing My Work 💡
-        </h2>
-        <p className="dark:text-gray-400 text-gray-500 mb-8">
-          A glimpse into my personal and professional projects—where ideas turn
-          into reality.
-        </p>
-        <div className="flex gap-2 mb-5">
+        <div className="flex justify-between">
+          <div className="flex flex-col">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold mb-2 dark:text-white text-gray-800">
+              Showcasing My Work 💡
+            </h2>
+            <p className="dark:text-gray-400 text-gray-500 mb-8">
+              A glimpse into my personal and professional projects—where ideas
+              turn into reality.
+            </p>
+          </div>
+          {!isProjectPage && (
+            <Link href="/projects" className="">
+              <div className="text-card-foreground text-sm hover:shadow-lg transition-all py-3 flex items-center justify-center gap-2">
+                <span>View more</span>
+                <ArrowRight className="inline-block w-[18px] h-[18px]" />
+              </div>
+            </Link>
+          )}
+        </div>
+        {/* <div className="flex gap-2 mb-5">
           {isProjectPage &&
             pillsButtons.map((item) => (
               <Button
@@ -177,7 +238,7 @@ export default function FeatureProjects() {
                 {item.title}
               </Button>
             ))}
-        </div>
+        </div> */}
         <div className="relative w-full grid grid-cols-12 gap-6">
           {projects.map((item, index) => (
             <div key={index} className="col-span-12 md:col-span-6">
@@ -193,16 +254,6 @@ export default function FeatureProjects() {
             </div>
           ))}
         </div>
-        {!isProjectPage && (
-          <div className="mt-6 flex justify-center w-full">
-            <Link href="/projects" className="w-full focus-ring rounded-lg">
-              <div className="w-full bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg shadow-primary/15 transition-all py-3 border border-border flex items-center justify-center gap-2 hover:text-primary/80 hover:bg-accent/30">
-                <span>View more</span>
-                <ArrowRight className="inline-block w-[18px] h-[18px]" />
-              </div>
-            </Link>
-          </div>
-        )}
       </Element>
     </motion.div>
   );
